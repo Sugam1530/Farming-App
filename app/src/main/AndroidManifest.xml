@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Farming">
         <activity
+            android:name=".slider"
+            android:exported="false" />
+        <activity
+            android:name=".Enter_mobile_number"
+            android:exported="false" />
+        <activity
             android:name=".signin_password"
             android:exported="false" />
         <activity
@@ -22,7 +28,7 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".Enter_mobile_number"
+            android:name=".real_splash_screen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
