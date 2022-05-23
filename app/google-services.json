@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "465622404064",
+    "project_id": "farming-72ab3",
+    "storage_bucket": "farming-72ab3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:465622404064:android:b539d53140f9b38ad9b985",
+        "android_client_info": {
+          "package_name": "com.example.farming"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "465622404064-839jus50bmm65lp2i8q8stor5b3tknch.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBphMRP3UsMzMS--O1zF5-rhuHfPR-jkHM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "465622404064-839jus50bmm65lp2i8q8stor5b3tknch.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

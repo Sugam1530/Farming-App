@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Farming</string>
+    <string name="OTP_Sent">Please Enter the OTP Sent to you</string>
+    <string name="otp_verification">OTP has been sent to your mobile number</string>
+    <string name="enter_mobile_number">Enter Mobile Number</string>
+    <string name="didn_t_receive_the_otp">Didn\'t Receive the OTP</string>
+    <string name="resend_otp">RESEND OTP</string>
+    <string name="residents_description">From here you can easily view society residents and manage your committee.</string>
+    <string name="daily_help_description">You will easily find staffs and workers who provide help from here.</string>
+    <string name="covid_protect_description">Here you will find all quarantine statuses and all people\'s vacation statuses in your society</string>
+    <string name="emergency_no_description">All emergency number of your society you will find here</string>
+    <string name="help_desk_description">Raised your all complaints and message to society from here</string>
+    <string name="Amenities_description">Book your facilities and services from here which you need</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

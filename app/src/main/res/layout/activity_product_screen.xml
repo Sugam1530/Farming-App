@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".product_screen"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/farmingLayoutHeader"
+        android:background="@color/farming_main"
+        app:layout_constraintTop_toTopOf="parent"
+        android:elevation="10dp"
+        android:outlineSpotShadowColor="@color/black"
+        android:outlineAmbientShadowColor="@color/black">
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/ic_baseline_keyboard_backspace_24"
+            android:foregroundTint="@color/white"
+            android:backgroundTint="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textProduct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:paddingTop="15dp"
+            android:gravity="center"
+            android:text="Product"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf= "@id/btnBack"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/headerLine"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="4dp"
+        android:background="@android:color/black"
+        app:layout_constraintTop_toBottomOf="@+id/farmingLayoutHeader"/>
+
+    <TextView
+        android:id="@+id/compare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:paddingRight="15dp"
+        android:text="Compare"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="normal"
+        app:layout_constraintLeft_toLeftOf="@+id/compareImage"
+        app:layout_constraintTop_toBottomOf="@id/headerLine">
+
+    </TextView>
+
+    <ImageView
+        android:id="@+id/compareImage"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="2dp"
+        app:layout_constraintLeft_toLeftOf="@+id/compare"
+        app:layout_constraintTop_toBottomOf="@+id/headerLine"
+        android:src="@drawable/ic_baseline_compare_24">
+
+    </ImageView>
+
+    <View
+        android:id="@+id/underCompare"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/black"
+        app:layout_constraintTop_toBottomOf="@+id/compare"/>
+
+    <View
+        android:id="@+id/rightCompare"
+        android:layout_width="2dp"
+        android:layout_height="37dp"
+        android:background="@android:color/black"
+        app:layout_constraintTop_toBottomOf="@+id/headerLine"
+        app:layout_constraintRight_toRightOf="@+id/compare" />
+
+    <TextView
+        android:id="@+id/sort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:paddingRight="25dp"
+        android:text="Sort"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="normal"
+        app:layout_constraintLeft_toLeftOf="@+id/sortImage"
+        app:layout_constraintTop_toBottomOf="@id/headerLine">
+
+    </TextView>
+
+    <ImageView
+        android:id="@+id/sortImage"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="2dp"
+        app:layout_constraintLeft_toLeftOf="@+id/rightCompare"
+        app:layout_constraintTop_toBottomOf="@+id/headerLine"
+        android:src="@drawable/ic_baseline_sort_24"
+        android:layout_marginLeft="25dp">
+
+    </ImageView>
+
+    <View
+        android:id="@+id/rightSort"
+        android:layout_width="2dp"
+        android:layout_height="37dp"
+        android:background="@android:color/black"
+        app:layout_constraintTop_toBottomOf="@+id/headerLine"
+        app:layout_constraintRight_toRightOf="@+id/sort" />
+
+    <TextView
+        android:id="@+id/filter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:paddingRight="8dp"
+        android:text="Filter"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="normal"
+        app:layout_constraintLeft_toLeftOf="@+id/filterImage"
+        app:layout_constraintTop_toBottomOf="@id/headerLine">
+
+    </TextView>
+
+    <ImageView
+        android:id="@+id/filterImage"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="2dp"
+        app:layout_constraintLeft_toLeftOf="@+id/rightSort"
+        app:layout_constraintTop_toBottomOf="@+id/headerLine"
+        android:src="@drawable/ic_baseline_filter_alt_24"
+        android:layout_marginLeft="25dp">
+
+    </ImageView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
