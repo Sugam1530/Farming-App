@@ -15,6 +15,7 @@ public class real_splash_screen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_real_splash_screen);
 
+
         launcherManager = new LauncherManager(this);
 
         new Handler().postDelayed(new Runnable() {

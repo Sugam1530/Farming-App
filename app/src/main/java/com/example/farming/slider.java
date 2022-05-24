@@ -46,8 +46,6 @@ public class slider extends AppCompatActivity {
             }
         });
 
-        getSupportActionBar().hide();
-
         viewPager.addOnPageChangeListener(viewPagerChangeListner);
     }
 
