@@ -20,7 +20,7 @@
         <ImageView
             android:id="@+id/textHello"
             android:layout_width="30dp"
-            android:layout_height="50dp"
+            android:layout_height="35dp"
             android:layout_marginStart="15dp"
             android:layout_marginTop="8dp"
             android:src="@drawable/ic_baseline_menu_24"
@@ -31,7 +31,7 @@
             android:id="@+id/appName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="12dp"
             android:gravity="center"
             android:text="Farming"
             android:textColor="@color/white"
@@ -43,7 +43,7 @@
 
         <ImageView
             android:id="@+id/imageNotification"
-            android:layout_width="40dp"
+            android:layout_width="35dp"
             android:layout_height="35dp"
             android:layout_marginEnd="15dp"
             android:contentDescription="@string/app_name"
@@ -55,8 +55,8 @@
 
         <ImageView
             android:id="@+id/addToCart"
-            android:layout_width="40dp"
-            android:layout_height="50dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:paddingEnd="10dp"
             android:src="@drawable/ic_baseline_shopping_cart_24"
             app:layout_constraintBottom_toBottomOf="@id/textHello"
@@ -98,15 +98,24 @@
 
             <LinearLayout
                 android:id="@+id/layoutCategory"
-                android:layout_width="wrap_content"
-                android:layout_height="210dp"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
                 android:background="@color/white"
-                android:gravity="center"
-                android:padding="15dp"
+                android:padding="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
+                android:orientation="vertical"
                 tools:ignore="MissingConstraints"
                 tools:layout_editor_absoluteY="0dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="View All"
+                    android:textStyle="bold"
+                    android:textSize="12sp"
+                    android:textColor="#1bda9a"
+                    android:layout_gravity="end" />
 
                 <TextView
                     android:id="@+id/textCategory"
@@ -114,80 +123,123 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="top"
-                    android:layout_marginBottom="140dp"
                     android:text="Categories"
                     android:textColor="@color/black"
-                    android:textSize="25sp"
+                    android:textSize="20sp"
                     android:textStyle="bold" />
 
                 <LinearLayout
-                    android:id="@+id/fruitsLinearLayout"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="10dp"
-                    android:background="#f2f2f2"
-                    android:orientation="vertical">
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center">
+                    <LinearLayout
+                        android:id="@+id/fruitsLinearLayout"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="#f2f2f2"
+                        android:orientation="vertical">
 
-                    <ImageView
-                        android:id="@+id/fruitsImage"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="20dp"
-                        android:src="@drawable/farming_login" />
+                        <ImageView
+                            android:id="@+id/fruitsImage"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="20dp"
+                            android:src="@drawable/fruitsapple" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="Fruits"
-                        android:textColor="@color/black"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="5dp"
+                            android:text="Fruits"
+                            android:textColor="@color/black"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="#f2f2f2"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/flourImage"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="20dp"
+                            android:src="@drawable/floursecond" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="5dp"
+                            android:text="Flour"
+                            android:textColor="@color/black"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_marginTop="10dp"
+                        android:background="#f2f2f2"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/dairyCategory"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="20dp"
+                            android:src="@drawable/dairycategory" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Dairy"
+                            android:textColor="@color/black"
+                            android:layout_marginTop="5dp"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
                 </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_marginTop="10dp"
-                    android:background="#f2f2f2"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:id="@+id/flourImage"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="20dp"
-                        android:src="@drawable/farming_login" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="Fruits"
-                        android:textColor="@color/black"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/layoutProduct"
                 android:layout_width="350dp"
-                android:layout_height="210dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="22dp"
                 android:gravity="center"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:background="@color/white"
-                android:padding="15dp"
+                android:padding="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/layoutCategory"
                 app:layout_editor_absoluteY="0dp">
+
+                <TextView
+                    android:id="@+id/viewProductAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:text="View All"
+                    android:textColor="#1bda9a"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/textProduct"
@@ -195,62 +247,98 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="top"
-                    android:layout_marginBottom="140dp"
                     android:text="Product"
                     android:textColor="@color/black"
-                    android:textSize="25sp"
+                    android:textSize="20sp"
                     android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
 
                 <LinearLayout
                     android:id="@+id/productLinearLayout"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_marginTop="10dp"
                     android:background="#f2f2f2"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:layout_marginRight="10dp">
 
                     <ImageView
                         android:id="@+id/productImage"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
                         android:layout_gravity="center"
                         android:layout_marginTop="20dp"
-                        android:src="@drawable/farming_login" />
+                        android:src="@drawable/product1" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="Fruits"
+                        android:layout_marginTop="5dp"
+                        android:text="Product1"
                         android:textColor="@color/black"
-                        android:textSize="20sp"
+                        android:textSize="15sp"
                         android:textStyle="bold" />
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_marginTop="10dp"
                     android:background="#f2f2f2"
+                    android:layout_marginRight="10dp"
                     android:orientation="vertical">
 
                     <ImageView
                         android:id="@+id/product2Image"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
                         android:layout_gravity="center"
                         android:layout_marginTop="20dp"
-                        android:src="@drawable/farming_login" />
+                        android:src="@drawable/product1" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="Fruits"
+                        android:layout_marginTop="5dp"
+                        android:text="Product2"
                         android:textColor="@color/black"
-                        android:textSize="20sp"
+                        android:textSize="15sp"
                         android:textStyle="bold" />
                 </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="10dp"
+                    android:background="#f2f2f2"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/product3Image"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/product1" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:text="Product3"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
 
             </LinearLayout>
 

@@ -3,10 +3,13 @@ package com.example.farming;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
+import android.preference.PreferenceManager;
 
 public class real_splash_screen extends AppCompatActivity {
+
 
     LauncherManager launcherManager;
 
@@ -21,7 +24,12 @@ public class real_splash_screen extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                if (launcherManager.isFirstTime()){
+                SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(real_splash_screen.this);
+                if(sharedPreferences.getBoolean("userLoggedInFlag", false))
+                {
+                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                }
+                else if (launcherManager.isFirstTime()){
                     startActivity(new Intent(getApplicationContext(), slider.class));
 
                 } else {

@@ -40,7 +40,7 @@ public class slider extends AppCompatActivity {
                 if (viewPager.getCurrentItem() +1 < layouts.length){
                     viewPager.setCurrentItem(viewPager.getCurrentItem()+1);
                 } else{
-                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                    startActivity(new Intent(getApplicationContext(), Enter_mobile_number.class));
 
                 }
             }

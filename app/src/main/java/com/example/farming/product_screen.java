@@ -25,8 +25,5 @@ public class product_screen extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
-        getSupportActionBar().hide();
     }
 }
