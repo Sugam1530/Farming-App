@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Farming">
         <activity
+            android:name=".cartView"
+            android:exported="false" />
+        <activity
             android:name=".slider"
             android:exported="false" />
         <activity
