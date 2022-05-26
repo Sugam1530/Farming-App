@@ -5,9 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+
+    ImageView addToCart;
 
     TextView viewProductAll;
 
@@ -17,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         viewProductAll = findViewById(R.id.viewProductAll);
+        addToCart = findViewById(R.id.addToCart);
 
         viewProductAll.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -25,5 +29,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        addToCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), cartView.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
 }
