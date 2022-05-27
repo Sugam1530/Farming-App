@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Farming">
         <activity
+            android:name=".Wallet_view"
+            android:exported="false" />
+        <activity
             android:name=".transaction_history"
             android:exported="false" />
         <activity
