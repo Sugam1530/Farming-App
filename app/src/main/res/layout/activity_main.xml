@@ -1,189 +1,330 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBackground"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:id="@+id/drawer_layout"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
+
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/navigationview"
+        app:headerLayout="@layout/headerfile"
+        app:menu="@menu/sidemenu"
+        android:layout_gravity="start"/>
+
+
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/layoutheader"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:background="#1bda9a"
-        android:padding="10dp"
-        app:layout_constraintTop_toTopOf="parent">
-
-
-        <ImageView
-            android:id="@+id/textHello"
-            android:layout_width="30dp"
-            android:layout_height="35dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="8dp"
-            android:src="@drawable/ic_baseline_menu_24"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/appName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:gravity="center"
-            android:text="Farming"
-            android:textColor="@color/white"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/addToCart"
-            app:layout_constraintStart_toEndOf="@+id/textHello"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/imageNotification"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginEnd="15dp"
-            android:contentDescription="@string/app_name"
-            android:src="@drawable/ic_baseline_account_balance_wallet_24"
-            app:layout_constraintBottom_toBottomOf="@id/textHello"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/textHello"
-            app:tint="@color/white" />
-
-        <ImageView
-            android:id="@+id/addToCart"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:paddingEnd="10dp"
-            android:src="@drawable/ic_baseline_shopping_cart_24"
-            app:layout_constraintBottom_toBottomOf="@id/textHello"
-            app:layout_constraintEnd_toStartOf="@+id/imageNotification"
-            app:layout_constraintTop_toTopOf="@id/textHello"
-            app:layout_constraintVertical_bias="0.653"
-            app:tint="@color/white" />
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <GridLayout
-        android:id="@+id/mainHomeImage"
-        android:layout_width="350dp"
-        android:layout_height="200dp"
-        android:background="@drawable/homebanner"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.48"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="95dp" />
-
-
-    <ScrollView
-        android:id="@+id/homedashboard"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:overScrollMode="never"
-        android:scrollbars="none"
-        android:layout_marginTop="10dp"
-        app:layout_constraintBottom_toTopOf="@id/viewDivider"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/mainHomeImage">
-
+        android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutheader"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="250dp"
+            android:background="#1bda9a"
+            android:padding="10dp"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <LinearLayout
-                android:id="@+id/layoutCategory"
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:padding="10dp"
-                app:layout_constraintEnd_toEndOf="parent"
+
+            <ImageView
+                android:id="@+id/textHello"
+                android:layout_width="30dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/ic_baseline_menu_24"
                 app:layout_constraintStart_toStartOf="parent"
-                android:orientation="vertical"
-                tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteY="0dp">
+                app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="View All"
-                    android:textStyle="bold"
-                    android:textSize="12sp"
-                    android:textColor="#1bda9a"
-                    android:layout_gravity="end" />
+            <TextView
+                android:id="@+id/appName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:gravity="center"
+                android:text="Farming"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/addToCart"
+                app:layout_constraintStart_toEndOf="@+id/textHello"
+                app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/textCategory"
-                    style="bold"
-                    android:layout_width="wrap_content"
+            <ImageView
+                android:id="@+id/imageNotification"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="15dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_baseline_account_balance_wallet_24"
+                app:layout_constraintBottom_toBottomOf="@id/textHello"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/textHello"
+                app:tint="@color/white" />
+
+            <ImageView
+                android:id="@+id/addToCart"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:paddingEnd="10dp"
+                android:src="@drawable/ic_baseline_shopping_cart_24"
+                app:layout_constraintBottom_toBottomOf="@id/textHello"
+                app:layout_constraintEnd_toStartOf="@+id/imageNotification"
+                app:layout_constraintTop_toTopOf="@id/textHello"
+                app:layout_constraintVertical_bias="0.653"
+                app:tint="@color/white" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <GridLayout
+            android:id="@+id/mainHomeImage"
+            android:layout_width="350dp"
+            android:layout_height="200dp"
+            android:background="@drawable/homebanner"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.48"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="95dp" />
+
+
+        <ScrollView
+            android:id="@+id/homedashboard"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:overScrollMode="never"
+            android:scrollbars="none"
+            android:layout_marginTop="10dp"
+            app:layout_constraintBottom_toTopOf="@id/viewDivider"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mainHomeImage">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/layoutCategory"
+                    android:layout_width="350dp"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="top"
-                    android:text="Categories"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:background="@color/white"
+                    android:padding="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:orientation="vertical"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteY="0dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="View All"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:textColor="#1bda9a"
+                        android:layout_gravity="end" />
+
+                    <TextView
+                        android:id="@+id/textCategory"
+                        style="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:text="Categories"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center">
+                        <LinearLayout
+                            android:id="@+id/fruitsLinearLayout"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:background="#f2f2f2"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/fruitsImage"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="20dp"
+                                android:src="@drawable/fruitsapple" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="5dp"
+                                android:text="Fruits"
+                                android:textColor="@color/black"
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="10dp"
+                            android:background="#f2f2f2"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/flourImage"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="20dp"
+                                android:src="@drawable/floursecond" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="5dp"
+                                android:text="Flour"
+                                android:textColor="@color/black"
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_marginTop="10dp"
+                            android:background="#f2f2f2"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/dairyCategory"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="20dp"
+                                android:src="@drawable/dairycategory" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="Dairy"
+                                android:textColor="@color/black"
+                                android:layout_marginTop="5dp"
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layoutProduct"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="22dp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:background="@color/white"
+                    android:padding="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layoutCategory"
+                    app:layout_editor_absoluteY="0dp">
+
+                    <TextView
+                        android:id="@+id/viewProductAll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:text="View All"
+                        android:textColor="#1bda9a"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textProduct"
+                        style="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:text="Product"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:layout_gravity="center">
+
                     <LinearLayout
-                        android:id="@+id/fruitsLinearLayout"
+                        android:id="@+id/productLinearLayout"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:layout_marginTop="10dp"
-                        android:layout_marginLeft="10dp"
+                        android:background="#f2f2f2"
+                        android:orientation="vertical"
+                        android:layout_marginRight="10dp">
+
+                        <ImageView
+                            android:id="@+id/productImage"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="20dp"
+                            android:src="@drawable/product1" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="5dp"
+                            android:text="Product1"
+                            android:textColor="@color/black"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_marginTop="10dp"
+                        android:background="#f2f2f2"
                         android:layout_marginRight="10dp"
-                        android:background="#f2f2f2"
                         android:orientation="vertical">
 
                         <ImageView
-                            android:id="@+id/fruitsImage"
+                            android:id="@+id/product2Image"
                             android:layout_width="25dp"
                             android:layout_height="25dp"
                             android:layout_gravity="center"
                             android:layout_marginTop="20dp"
-                            android:src="@drawable/fruitsapple" />
+                            android:src="@drawable/product1" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_marginTop="5dp"
-                            android:text="Fruits"
-                            android:textColor="@color/black"
-                            android:textSize="15sp"
-                            android:textStyle="bold" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginRight="10dp"
-                        android:background="#f2f2f2"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:id="@+id/flourImage"
-                            android:layout_width="25dp"
-                            android:layout_height="25dp"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="20dp"
-                            android:src="@drawable/floursecond" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="5dp"
-                            android:text="Flour"
+                            android:text="Product2"
                             android:textColor="@color/black"
                             android:textSize="15sp"
                             android:textStyle="bold" />
@@ -197,176 +338,55 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:id="@+id/dairyCategory"
+                            android:id="@+id/product3Image"
                             android:layout_width="25dp"
                             android:layout_height="25dp"
                             android:layout_gravity="center"
                             android:layout_marginTop="20dp"
-                            android:src="@drawable/dairycategory" />
+                            android:src="@drawable/product1" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:text="Dairy"
-                            android:textColor="@color/black"
                             android:layout_marginTop="5dp"
+                            android:text="Product3"
+                            android:textColor="@color/black"
                             android:textSize="15sp"
                             android:textStyle="bold" />
                     </LinearLayout>
                 </LinearLayout>
-            </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/layoutProduct"
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="22dp"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:background="@color/white"
-                android:padding="10dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/layoutCategory"
-                app:layout_editor_absoluteY="0dp">
-
-                <TextView
-                    android:id="@+id/viewProductAll"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:text="View All"
-                    android:textColor="#1bda9a"
-                    android:textSize="12sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/textProduct"
-                    style="bold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="top"
-                    android:text="Product"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_gravity="center">
-
-                <LinearLayout
-                    android:id="@+id/productLinearLayout"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_marginTop="10dp"
-                    android:background="#f2f2f2"
-                    android:orientation="vertical"
-                    android:layout_marginRight="10dp">
-
-                    <ImageView
-                        android:id="@+id/productImage"
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="20dp"
-                        android:src="@drawable/product1" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="5dp"
-                        android:text="Product1"
-                        android:textColor="@color/black"
-                        android:textSize="15sp"
-                        android:textStyle="bold" />
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_marginTop="10dp"
-                    android:background="#f2f2f2"
-                    android:layout_marginRight="10dp"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:id="@+id/product2Image"
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="20dp"
-                        android:src="@drawable/product1" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="5dp"
-                        android:text="Product2"
-                        android:textColor="@color/black"
-                        android:textSize="15sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_marginTop="10dp"
-                    android:background="#f2f2f2"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:id="@+id/product3Image"
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="20dp"
-                        android:src="@drawable/product1" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="5dp"
-                        android:text="Product3"
-                        android:textColor="@color/black"
-                        android:textSize="15sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-            </LinearLayout>
-
-            </LinearLayout>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 
-    </ScrollView>
+        </ScrollView>
 
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationMenu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:backgroundTint="@color/white"
-        app:itemIconTint="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:menu="@menu/navigation_menu"
-        app:itemTextColor="#1bda9a"
-        android:backgroundTint="#1bda9a"/>
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigationMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:backgroundTint="@color/white"
+            app:itemIconTint="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:menu="@menu/navigation_menu"
+            app:itemTextColor="#1bda9a"
+            android:backgroundTint="#1bda9a"/>
 
-    <View
-        android:id="@+id/viewDivider"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/black"
-        app:layout_constraintBottom_toTopOf="@id/bottomNavigationMenu" />
+        <View
+            android:id="@+id/viewDivider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black"
+            app:layout_constraintBottom_toTopOf="@id/bottomNavigationMenu" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.drawerlayout.widget.DrawerLayout>
 
 
