@@ -1,6 +1,6 @@
 package com.example.farming;
 
-public class PostPojo {
+public class ProductOverview {
 
     private String id;
     private String cat_id;
@@ -11,11 +11,11 @@ public class PostPojo {
     private String created_at;
     private String updated_at;
 
-    public PostPojo()
+    public ProductOverview()
     {
     }
 
-    public PostPojo(String id, String cat_id, String product_name, String product_details, String image, String is_active, String created_at, String updated_at)
+    public ProductOverview(String id, String cat_id, String product_name, String product_details, String image, String is_active, String created_at, String updated_at)
     {
         this.id = id;
         this.cat_id = cat_id;

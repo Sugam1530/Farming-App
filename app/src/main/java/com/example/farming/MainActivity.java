@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     ImageView addToCart,imageNotification, textNavigation;
 
-    TextView viewProductAll;
+    TextView viewProductAll,categoryViewAll;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         textNavigation = findViewById(R.id.textHello);
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.navigationview);
+        categoryViewAll = findViewById(R.id.categoryViewAll);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(toggle);
@@ -52,6 +53,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), cartView.class);
+                startActivity(intent);
+            }
+        });
+
+        categoryViewAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), category_screen.class);
                 startActivity(intent);
             }
         });

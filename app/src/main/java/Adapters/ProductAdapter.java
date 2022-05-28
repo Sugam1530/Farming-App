@@ -9,17 +9,17 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.farming.PostPojo;
+import com.example.farming.ProductOverview;
 import com.example.farming.R;
 
 import java.util.List;
 
-public class Adapter extends RecyclerView.Adapter<Adapter.viewHolder> {
+public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.viewHolder> {
 
-    private List<PostPojo> dataList;
+    private List<ProductOverview> dataList;
     private Context context;
 
-    public Adapter(Context context, List<PostPojo> dataList){
+    public ProductAdapter(Context context, List<ProductOverview> dataList){
         this.context = context;
         this.dataList = dataList;
     }

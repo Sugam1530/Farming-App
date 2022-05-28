@@ -10,14 +10,6 @@
     android:fitsSystemWindows="true"
     tools:openDrawer="start">
 
-    <com.google.android.material.navigation.NavigationView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:id="@+id/navigationview"
-        app:headerLayout="@layout/headerfile"
-        app:menu="@menu/sidemenu"
-        android:layout_gravity="start"/>
-
 
 
 
@@ -126,6 +118,7 @@
                     tools:layout_editor_absoluteY="0dp">
 
                     <TextView
+                        android:id="@+id/categoryViewAll"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="View All"
@@ -385,6 +378,14 @@
             app:layout_constraintBottom_toTopOf="@id/bottomNavigationMenu" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/navigationview"
+        app:headerLayout="@layout/headerfile"
+        app:menu="@menu/sidemenu"
+        android:layout_gravity="start"/>
 
 
 </androidx.drawerlayout.widget.DrawerLayout>
