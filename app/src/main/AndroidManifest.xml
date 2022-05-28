@@ -10,6 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Farming">
         <activity
+            android:name=".side_drawer_menu"
+            android:exported="false"
+            android:label="@string/title_activity_side_drawer_menu"
+            android:theme="@style/Theme.Farming.NoActionBar" />
+        <activity
+            android:name=".activity_favourite"
+            android:exported="false" />
+        <activity
+            android:name=".activity_services"
+            android:exported="false" />
+        <activity
             android:name=".Wallet_view"
             android:exported="false" />
         <activity
