@@ -22,7 +22,7 @@ public class product_screen extends AppCompatActivity {
     ApiInterface apiInterface;
     RecyclerView recyclerView;
 
-    TextView btnBack;
+    TextView btnBack,filter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +31,12 @@ public class product_screen extends AppCompatActivity {
 
         apiInterface = RetrofitInstance.getRetrofit().create(ApiInterface.class);
         recyclerView = findViewById(R.id.recyclerView);
+        filter = findViewById(R.id.filter);
+
+        filter.setOnClickListener(view -> {
+            Intent intent = new Intent(getApplicationContext(), single_product_details.class);
+            startActivity(intent);
+        });
 
         apiInterface.getproduct().enqueue(new Callback<ResponseArrayProductOverview>() {
             @Override

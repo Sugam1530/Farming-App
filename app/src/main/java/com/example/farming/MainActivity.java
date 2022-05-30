@@ -70,6 +70,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        NavigationView navigationView = findViewById(R.id.navigationview);
+
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.wallet:
+                        startActivity(new Intent(getApplicationContext(),
+                                Wallet_view.class));
+                        overridePendingTransition(0,0);
+                }
+                return false;
+            }
+        });
+
+
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationMenu);
 
         bottomNavigationView.setSelectedItemId(R.id.menuHome);

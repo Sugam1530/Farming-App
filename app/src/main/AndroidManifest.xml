@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Farming">
         <activity
+            android:name=".single_product_details"
+            android:exported="false" />
+        <activity
             android:name=".category_screen"
             android:exported="false" />
         <activity

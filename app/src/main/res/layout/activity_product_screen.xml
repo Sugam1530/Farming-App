@@ -59,31 +59,6 @@
         android:background="@android:color/black"
         app:layout_constraintTop_toBottomOf="@+id/farmingLayoutHeader"/>
 
-    <TextView
-        android:id="@+id/compare"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:paddingRight="15dp"
-        android:text="Compare"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="normal"
-        app:layout_constraintLeft_toLeftOf="@+id/compareImage"
-        app:layout_constraintTop_toBottomOf="@id/headerLine">
-
-    </TextView>
-
-    <ImageView
-        android:id="@+id/compareImage"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="2dp"
-        app:layout_constraintLeft_toLeftOf="@+id/compare"
-        app:layout_constraintTop_toBottomOf="@+id/headerLine"
-        android:src="@drawable/ic_baseline_compare_24">
-
-    </ImageView>
 
     <View
         android:id="@+id/underCompare"
@@ -91,15 +66,7 @@
         android:layout_height="2dp"
         android:layout_marginTop="8dp"
         android:background="@android:color/black"
-        app:layout_constraintTop_toBottomOf="@+id/compare"/>
-
-    <View
-        android:id="@+id/rightCompare"
-        android:layout_width="2dp"
-        android:layout_height="37dp"
-        android:background="@android:color/black"
-        app:layout_constraintTop_toBottomOf="@+id/headerLine"
-        app:layout_constraintRight_toRightOf="@+id/compare" />
+        app:layout_constraintTop_toBottomOf="@+id/sort"/>
 
     <TextView
         android:id="@+id/sort"
@@ -121,7 +88,7 @@
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginTop="2dp"
-        app:layout_constraintLeft_toLeftOf="@+id/rightCompare"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/headerLine"
         android:src="@drawable/ic_baseline_sort_24"
         android:layout_marginLeft="25dp">
@@ -133,8 +100,10 @@
         android:layout_width="2dp"
         android:layout_height="37dp"
         android:background="@android:color/black"
-        app:layout_constraintTop_toBottomOf="@+id/headerLine"
-        app:layout_constraintRight_toRightOf="@+id/sort" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintRight_toRightOf="@+id/sort"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headerLine" />
 
     <TextView
         android:id="@+id/filter"
