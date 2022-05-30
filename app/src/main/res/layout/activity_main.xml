@@ -11,11 +11,21 @@
     tools:openDrawer="start">
 
 
-
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/drawer_layout2"
+            android:layout_width="wrap_content"
+            android:layout_height="?attr/actionBarSize"
+            android:elevation="4dp"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layoutheader"
@@ -25,16 +35,6 @@
             android:padding="10dp"
             app:layout_constraintTop_toTopOf="parent">
 
-
-            <ImageView
-                android:id="@+id/textHello"
-                android:layout_width="30dp"
-                android:layout_height="35dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="8dp"
-                android:src="@drawable/ic_baseline_menu_24"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/appName"
@@ -47,30 +47,20 @@
                 android:textSize="25sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@+id/addToCart"
-                app:layout_constraintStart_toEndOf="@+id/textHello"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:id="@+id/imageNotification"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginEnd="15dp"
-                android:contentDescription="@string/app_name"
-                android:src="@drawable/ic_baseline_account_balance_wallet_24"
-                app:layout_constraintBottom_toBottomOf="@id/textHello"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/textHello"
-                app:tint="@color/white" />
 
             <ImageView
                 android:id="@+id/addToCart"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:paddingEnd="10dp"
+                android:layout_marginEnd="30dp"
                 android:src="@drawable/ic_baseline_shopping_cart_24"
-                app:layout_constraintBottom_toBottomOf="@id/textHello"
-                app:layout_constraintEnd_toStartOf="@+id/imageNotification"
-                app:layout_constraintTop_toTopOf="@id/textHello"
+                app:layout_constraintBottom_toBottomOf="@id/appName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/appName"
                 app:layout_constraintVertical_bias="0.653"
                 app:tint="@color/white" />
 

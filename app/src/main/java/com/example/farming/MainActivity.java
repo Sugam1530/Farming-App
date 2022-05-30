@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toolbar;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
@@ -18,7 +19,9 @@ import com.google.android.material.navigation.NavigationView;
 public class MainActivity extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
+    androidx.appcompat.widget.Toolbar drawerLayout2;
     NavigationView navigationView;
+    ActionBarDrawerToggle toggle;
 
     ImageView addToCart,imageNotification, textNavigation;
 
@@ -31,15 +34,15 @@ public class MainActivity extends AppCompatActivity {
 
         viewProductAll = findViewById(R.id.viewProductAll);
         addToCart = findViewById(R.id.addToCart);
-        imageNotification = findViewById(R.id.imageNotification);
-        textNavigation = findViewById(R.id.textHello);
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.navigationview);
         categoryViewAll = findViewById(R.id.categoryViewAll);
+        drawerLayout2 = findViewById(R.id.drawer_layout2);
 
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        toggle = new ActionBarDrawerToggle(this, drawerLayout ,drawerLayout2,R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
+
 
         viewProductAll.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
 
         addToCart.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,15 +69,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        imageNotification.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), Wallet_view.class);
-                startActivity(intent);
-            }
-        });
-
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationMenu);
 
@@ -97,5 +93,15 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+
     }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        if (toggle.onOptionsItemSelected(item)) {
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 }

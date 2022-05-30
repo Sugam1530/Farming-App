@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import java.util.List;
 
+import Adapters.CategoryAdapter;
 import Adapters.ProductAdapter;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -32,13 +33,12 @@ public class category_screen extends AppCompatActivity {
         apiInterface = RetrofitInstance.getRetrofit().create(ApiInterface.class);
         recyclerView = findViewById(R.id.recyclerView);
 
-        apiInterface.getcategory().enqueue(new Callback<ResponseArrayProductOverview>() {
+        apiInterface.getcategory().enqueue(new Callback<ResponseArrayCategoryOverview>() {
             @Override
-            public void onResponse(Call<ResponseArrayProductOverview> call, Response<ResponseArrayProductOverview> response) {
-
+            public void onResponse(Call<ResponseArrayCategoryOverview> call, Response<ResponseArrayCategoryOverview> response) {
                 if (response.body() != null){
-                    List<ProductOverview> productList = response.body().getResponse();
-                    ProductAdapter adapter = new ProductAdapter(category_screen.this,productList);
+                    List<CategoryOverview> categoryList = response.body().getResponse();
+                    CategoryAdapter adapter = new CategoryAdapter(category_screen.this,categoryList);
                     LinearLayoutManager linearLayoutManager = new LinearLayoutManager(category_screen.this);
                     recyclerView.setLayoutManager(linearLayoutManager);
                     recyclerView.setAdapter(adapter);
@@ -47,11 +47,11 @@ public class category_screen extends AppCompatActivity {
                 } else{
                     Toast.makeText(category_screen.this, "Not Success", Toast.LENGTH_SHORT).show();
                 }
-
             }
 
             @Override
-            public void onFailure(Call<ResponseArrayProductOverview> call, Throwable t) {
+            public void onFailure(Call<ResponseArrayCategoryOverview> call, Throwable t) {
+                Toast.makeText(category_screen.this, t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
 
             }
         });

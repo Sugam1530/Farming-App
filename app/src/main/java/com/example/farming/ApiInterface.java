@@ -10,7 +10,7 @@ public interface ApiInterface {
     Call<ResponseArrayProductOverview> getproduct();
 
 @GET("trader_erp/api/category")
-    Call<ResponseArrayProductOverview> getcategory();
+    Call<ResponseArrayCategoryOverview> getcategory();
 
 
 }
