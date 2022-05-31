@@ -10,12 +10,14 @@ public class SingleProductOverview {
     private String is_active;
     private String created_at;
     private String updated_at;
+    private String mrp;
+    private String sp;
 
     public SingleProductOverview()
     {
     }
 
-    public SingleProductOverview(String id, String cat_id, String product_name, String product_details, String image, String is_active, String created_at, String updated_at)
+    public SingleProductOverview(String id, String cat_id, String product_name, String mrp, String sp, String product_details, String image, String is_active, String created_at, String updated_at)
     {
         this.id = id;
         this.cat_id = cat_id;
@@ -25,6 +27,8 @@ public class SingleProductOverview {
         this.is_active = is_active;
         this.created_at = created_at;
         this.updated_at = updated_at ;
+        this.mrp = mrp;
+        this.sp = sp;
     }
 
 
@@ -40,6 +44,14 @@ public class SingleProductOverview {
 
     public String getSingleProductDetails_name() {
         return product_name;
+    }
+
+    public String getMrp(){
+        return mrp;
+    }
+
+    public String getSp(){
+        return sp;
     }
 
     public String getSingleProduct_details() {
@@ -78,6 +90,14 @@ public class SingleProductOverview {
 
     public void setProduct_details(String product_details) {
         this.product_details = product_details;
+    }
+
+    public void setMrp(String mrp){
+        this.mrp = mrp;
+    }
+
+    public void setSp(String sp){
+        this.sp = sp;
     }
 
     public void setImage(String image) {

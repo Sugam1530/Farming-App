@@ -1,6 +1,7 @@
 package Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.example.farming.ProductDetailsActivity;
 import com.example.farming.ProductOverview;
 import com.example.farming.R;
 
@@ -37,7 +40,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.viewHold
             product_details = itemView.findViewById(R.id.product_details);
             mrpPrice = itemView.findViewById(R.id.mrpPrice);
             spPrice = itemView.findViewById(R.id.spPrice);
-            productImage = itemView.findViewById(R.id.imageView);
+            productImage = itemView.findViewById(R.id.productImage);
 
         }
     }
@@ -57,6 +60,14 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.viewHold
         holder.product_details.setText(dataList.get(position).getProduct_details());
         holder.mrpPrice.setText(dataList.get(position).getMrp());
         holder.spPrice.setText(dataList.get(position).getSp());
+        Glide.with(context).load(dataList.get(position).getImage()).into(holder.productImage);
+
+        holder.itemView.setOnClickListener(view -> {
+            Intent productDetailsIntent = new Intent(context, ProductDetailsActivity.class) ;
+            productDetailsIntent.putExtra(context.getString(R.string.productId), dataList.get(position).getId());
+            context.startActivity(productDetailsIntent);
+        });
+
        }
 
     @Override

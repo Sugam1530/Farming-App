@@ -20,7 +20,7 @@ public class ProductOverview {
     {
     }
 
-    public ProductOverview(String id, String cat_id, String product_name, String product_details, String image, String is_active, String created_at, String mrp, String sp, ImageView productImage, String updated_at)
+    public ProductOverview(String id, String cat_id, String product_name, String product_details, String image, String is_active, String created_at, String mrp, String sp, String updated_at)
     {
         this.id = id;
         this.cat_id = cat_id;
