@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Farming">
         <activity
+            android:name=".farmer_profile"
+            android:exported="false" />
+        <activity
             android:name=".ProductDetailsActivity"
             android:exported="false" />
         <activity

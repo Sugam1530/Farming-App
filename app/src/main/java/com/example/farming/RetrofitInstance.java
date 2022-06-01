@@ -7,7 +7,7 @@ public class RetrofitInstance {
 
     private static Retrofit retrofit;
 
-    private static final String BASEURL = "https://rendementdev.xyz/trader_erp/";
+    private static final String BASEURL = "https://rendementdev.xyz/tradererp/";
 
 
     public static Retrofit getRetrofit() {

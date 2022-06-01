@@ -16,7 +16,7 @@ import android.widget.Toolbar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     DrawerLayout drawerLayout;
     androidx.appcompat.widget.Toolbar drawerLayout2;
@@ -26,6 +26,20 @@ public class MainActivity extends AppCompatActivity {
     ImageView addToCart,imageNotification, textNavigation;
 
     TextView viewProductAll,categoryViewAll;
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.profile:
+                startActivity(new Intent(getApplicationContext(),farmer_profile.class));
+                break;
+            case R.id.wallet:
+                startActivity(new Intent(getApplicationContext(), Wallet_view.class));
+                break;
+
+        }
+        return true;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +56,8 @@ public class MainActivity extends AppCompatActivity {
         toggle = new ActionBarDrawerToggle(this, drawerLayout ,drawerLayout2,R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
+
+
 
 
         viewProductAll.setOnClickListener(new View.OnClickListener() {
@@ -72,18 +88,7 @@ public class MainActivity extends AppCompatActivity {
 
         NavigationView navigationView = findViewById(R.id.navigationview);
 
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.wallet:
-                        startActivity(new Intent(getApplicationContext(),
-                                Wallet_view.class));
-                        overridePendingTransition(0,0);
-                }
-                return false;
-            }
-        });
+        navigationView.setNavigationItemSelectedListener(this);
 
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationMenu);
