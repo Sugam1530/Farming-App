@@ -39,9 +39,7 @@ public class farmer_profile extends AppCompatActivity {
                     tvUserName.setText(response.body().getResponse().getUsername());
                     tvEmail.setText(response.body().getResponse().getEmail());
                     tvWalletBalance.setText(response.body().getResponse().getWallet_balance());
-                    Toast.makeText(farmer_profile.this, "Success", Toast.LENGTH_SHORT).show();
                 }
-                Toast.makeText(farmer_profile.this, "Not Success", Toast.LENGTH_SHORT).show();
             }
 
             @Override

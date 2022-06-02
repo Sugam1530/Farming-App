@@ -42,8 +42,6 @@
             app:layout_constraintStart_toEndOf="@+id/textHello"
             app:layout_constraintTop_toTopOf="parent" />
 
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <GridLayout
@@ -56,7 +54,7 @@
         app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="95dp">
+        android:layout_marginTop="125dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -81,7 +79,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/textbalance"
                 android:layout_marginStart="60dp"
-                android:text="599/-"
+                android:text="0.00/-"
                 android:textColor="@color/black"
                 android:textSize="23dp"
                 android:textStyle="bold" />
@@ -112,83 +110,6 @@
         </RelativeLayout>
 
     </GridLayout>
-
-    <RelativeLayout
-        android:layout_width="350dp"
-        android:layout_height="200dp"
-        android:background="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mainHomeImage"
-        app:layout_constraintVertical_bias="0.1"
-        android:elevation="00dp">
-
-
-        <TextView
-            android:id="@+id/moneyWallettext"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Add Money to Wallet"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:textSize="25sp"
-            android:layout_margin="10dp"/>
-
-        <EditText
-            android:id="@+id/addMoney"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/moneyWallettext"
-            android:layout_marginTop="10dp"
-            android:padding="10dp"
-            android:textColor="@color/black"
-            app:backgroundTint="@color/black"/>
-
-        <TextView
-            android:id="@+id/ruppes1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/addMoney"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
-            android:text="+100/-"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/ruppes2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/addMoney"
-            android:layout_alignLeft="@+id/ruppes1"
-            android:layout_marginStart="100dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
-            android:text="+200/-"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/addMoney"
-            android:layout_alignLeft="@+id/ruppes2"
-            android:layout_marginStart="100dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
-            android:text="+300/-"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-    </RelativeLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

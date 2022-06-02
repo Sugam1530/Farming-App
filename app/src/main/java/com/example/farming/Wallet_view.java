@@ -3,15 +3,21 @@ package com.example.farming;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class Wallet_view extends AppCompatActivity {
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
+public class Wallet_view extends AppCompatActivity {
+    ApiInterface apiInterface;
     ImageView btnBack;
-    TextView transactionHistory;
+    TextView transactionHistory,tvTotalMoney;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +26,25 @@ public class Wallet_view extends AppCompatActivity {
 
         btnBack= findViewById(R.id.textHello);
         transactionHistory = findViewById(R.id.transactionHistory);
+        tvTotalMoney = findViewById(R.id.totalMoney);
+        apiInterface = RetrofitInstance.getRetrofit().create(ApiInterface.class);
+
+
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(Wallet_view.this);
+        String userId = preferences.getString("userId", "");
+        apiInterface.getFarmerProfile(Integer.parseInt(userId)).enqueue(new Callback<ResponseArrayFarmerProfileOverview>() {
+            @Override
+            public void onResponse(Call<ResponseArrayFarmerProfileOverview> call, Response<ResponseArrayFarmerProfileOverview> response) {
+                if (response.body() != null && response.body().getResponse() != null){
+                    tvTotalMoney.setText(response.body().getResponse().getWallet_balance());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseArrayFarmerProfileOverview> call, Throwable t) {
+
+            }
+        });
 
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
