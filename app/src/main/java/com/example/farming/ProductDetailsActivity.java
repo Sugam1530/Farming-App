@@ -3,7 +3,9 @@ package com.example.farming;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -14,7 +16,7 @@ import retrofit2.Response;
 public class ProductDetailsActivity extends AppCompatActivity {
 
     ApiInterface apiInterface;
-    TextView tvProductName,tvProductDetails,tvmrpProductPrice, tvspProductPrice;
+    TextView tvProductName,tvProductDetails,tvmrpProductPrice, tvspProductPrice,btnBack, tvAddToCart;
 
 
     @Override
@@ -27,6 +29,8 @@ public class ProductDetailsActivity extends AppCompatActivity {
         tvProductDetails = findViewById(R.id.product_details);
         tvmrpProductPrice = findViewById(R.id.tvmrpProductPrice);
         tvspProductPrice = findViewById(R.id.tvspProductPrice);
+        btnBack = findViewById(R.id.btnBack);
+        tvAddToCart = findViewById(R.id.tvAddToCart);
 
 
 
@@ -38,7 +42,6 @@ public class ProductDetailsActivity extends AppCompatActivity {
                     tvProductDetails.setText(response.body().getResponse().getSingleProduct_details());
                     tvmrpProductPrice.setText(response.body().getResponse().getMrp());
                     tvspProductPrice.setText(response.body().getResponse().getSp());
-                    Toast.makeText(ProductDetailsActivity.this, "Success", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(ProductDetailsActivity.this, "Not Success", Toast.LENGTH_SHORT).show();
                 }
@@ -49,6 +52,16 @@ public class ProductDetailsActivity extends AppCompatActivity {
                 Toast.makeText(ProductDetailsActivity.this, t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
 
             }
+        });
+
+        btnBack.setOnClickListener(view -> {
+            Intent intent = new Intent(getApplicationContext(), product_screen.class);
+            startActivity(intent);
+        });
+
+        tvAddToCart.setOnClickListener(view -> {
+            Intent intent = new Intent(getApplicationContext(), cartView.class);
+            startActivity(intent);
         });
     }
 }

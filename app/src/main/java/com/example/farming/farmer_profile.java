@@ -2,9 +2,11 @@ package com.example.farming;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,7 +17,7 @@ import retrofit2.Response;
 public class farmer_profile extends AppCompatActivity {
 
     ApiInterface apiInterface;
-    TextView tvName, tvUserName, tvEmail, tvWalletBalance;
+    TextView tvName, tvUserName, tvEmail, tvWalletBalance, btnBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +29,7 @@ public class farmer_profile extends AppCompatActivity {
         tvUserName = findViewById(R.id.tvusername);
         tvEmail = findViewById(R.id.tvemail);
         tvWalletBalance = findViewById(R.id.tvwalletbalance);
+        btnBack = findViewById(R.id.btnBack);
 
 
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(farmer_profile.this);
@@ -47,6 +50,12 @@ public class farmer_profile extends AppCompatActivity {
                 Toast.makeText(farmer_profile.this, t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
 
             }
+        });
+
+        btnBack.setOnClickListener(view -> {
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(intent);
+
         });
     }
 }

@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Farming/app/src/main/res/drawable/backgroundbox.xml" value="0.2075" />
+        <entry key="..\:/Farming/app/src/main/res/drawable/frontshape.xml" value="0.2235" />
         <entry key="..\:/Farming/app/src/main/res/drawable/qty_box.xml" value="0.2235" />
         <entry key="..\:/Farming/app/src/main/res/drawable/singlefronview.xml" value="0.2235" />
         <entry key="..\:/Farming/app/src/main/res/layout/activity_cart_view.xml" value="0.25" />
