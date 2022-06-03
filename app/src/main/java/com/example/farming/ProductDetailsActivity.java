@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import okhttp3.MediaType;
+import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -60,6 +62,18 @@ public class ProductDetailsActivity extends AppCompatActivity {
         });
 
         tvAddToCart.setOnClickListener(view -> {
+//            apiInterface.postAddToCart().enqueue(new Callback<AddToCartOverview>() {
+//                @Override
+//                public void onResponse(Call<AddToCartOverview> call, Response<AddToCartOverview> response) {
+//
+//
+//                }
+//
+//                @Override
+//                public void onFailure(Call<AddToCartOverview> call, Throwable t) {
+//
+//                }
+//            });
             Intent intent = new Intent(getApplicationContext(), cartView.class);
             startActivity(intent);
         });

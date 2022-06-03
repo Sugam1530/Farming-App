@@ -1,6 +1,7 @@
 package com.example.farming;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -40,7 +41,10 @@ public class category_screen extends AppCompatActivity {
                     List<CategoryOverview> categoryList = response.body().getResponse();
                     CategoryAdapter adapter = new CategoryAdapter(category_screen.this,categoryList);
                     LinearLayoutManager linearLayoutManager = new LinearLayoutManager(category_screen.this);
-                    recyclerView.setLayoutManager(linearLayoutManager);
+
+                    GridLayoutManager gridLayoutManager = new GridLayoutManager(category_screen.this, 2);
+                    recyclerView.setLayoutManager(gridLayoutManager);
+
                     recyclerView.setAdapter(adapter);
 
                     Toast.makeText(category_screen.this, "Success", Toast.LENGTH_SHORT).show();
@@ -55,6 +59,8 @@ public class category_screen extends AppCompatActivity {
 
             }
         });
+
+
 
 
         btnBack = findViewById(R.id.btnBack);

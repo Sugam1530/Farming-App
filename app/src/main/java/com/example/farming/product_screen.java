@@ -33,11 +33,6 @@ public class product_screen extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerView);
         filter = findViewById(R.id.filter);
 
-        filter.setOnClickListener(view -> {
-            Intent intent = new Intent(getApplicationContext(), single_product_details.class);
-            startActivity(intent);
-        });
-
         apiInterface.getproduct().enqueue(new Callback<ResponseArrayProductOverview>() {
             @Override
             public void onResponse(Call<ResponseArrayProductOverview> call, Response<ResponseArrayProductOverview> response) {
@@ -47,8 +42,6 @@ public class product_screen extends AppCompatActivity {
                     LinearLayoutManager linearLayoutManager = new LinearLayoutManager(product_screen.this);
                     recyclerView.setLayoutManager(linearLayoutManager);
                     recyclerView.setAdapter(adapter);
-
-                    Toast.makeText(product_screen.this, "Success", Toast.LENGTH_SHORT).show();
                 } else{
                     Toast.makeText(product_screen.this, "Not Success", Toast.LENGTH_SHORT).show();
                 }

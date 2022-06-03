@@ -25,8 +25,15 @@ public interface ApiInterface {
 @GET("api/farmer/getfarmerprofile/{num}")
     Call<ResponseArrayFarmerProfileOverview> getFarmerProfile(@Path("num") int num);
 
+@GET("api/cart/getallcart/{num}")
+    Call<ResponseArrayGetAllCartProduct> getAllCartProduct(@Path("num") int num);
+
 @Multipart
 @POST("api/farmer/login")
     Call<ResponseArrayFarmerLoginOverview> postFarmerLogin (@Part("username") RequestBody username, @Part("password") RequestBody password);
+
+@Multipart
+@POST("api/cart/addCartproducts")
+    Call<AddToCartOverview> postAddToCart(@Part("farmer_id") int farmer_id, @Part("product_id") int product_id);
 
 }
