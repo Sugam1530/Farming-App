@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,6 +21,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
 
     ApiInterface apiInterface;
     TextView tvProductName,tvProductDetails,tvmrpProductPrice, tvspProductPrice,btnBack, tvAddToCart;
+    String farmerId;
 
 
     @Override
@@ -33,6 +36,10 @@ public class ProductDetailsActivity extends AppCompatActivity {
         tvspProductPrice = findViewById(R.id.tvspProductPrice);
         btnBack = findViewById(R.id.btnBack);
         tvAddToCart = findViewById(R.id.tvAddToCart);
+
+
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(ProductDetailsActivity.this);
+        farmerId = preferences.getString("userId", "");
 
 
 
@@ -61,21 +68,24 @@ public class ProductDetailsActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
+        final RequestBody farmerIdRequestBody = RequestBody.create(MediaType.parse("text/plain"), farmerId);
+        final RequestBody productIdRequestBody = RequestBody.create(MediaType.parse("text/plain"), getIntent().getStringExtra(getString(R.string.productId)));
+
         tvAddToCart.setOnClickListener(view -> {
-//            apiInterface.postAddToCart().enqueue(new Callback<AddToCartOverview>() {
-//                @Override
-//                public void onResponse(Call<AddToCartOverview> call, Response<AddToCartOverview> response) {
-//
-//
-//                }
-//
-//                @Override
-//                public void onFailure(Call<AddToCartOverview> call, Throwable t) {
-//
-//                }
-//            });
-            Intent intent = new Intent(getApplicationContext(), cartView.class);
-            startActivity(intent);
+            apiInterface.postAddToCart(farmerIdRequestBody,productIdRequestBody ).enqueue(new Callback<AddToCartOverview>() {
+                @Override
+                public void onResponse(Call<AddToCartOverview> call, Response<AddToCartOverview> response) {
+                    Toast.makeText(ProductDetailsActivity.this, "Added in cart", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getApplicationContext(), cartView.class);
+                    startActivity(intent);
+                }
+
+                @Override
+                public void onFailure(Call<AddToCartOverview> call, Throwable t) {
+                    Toast.makeText(ProductDetailsActivity.this, t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+
+                }
+            });
         });
     }
 }

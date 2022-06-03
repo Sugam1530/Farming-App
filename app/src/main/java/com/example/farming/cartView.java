@@ -47,7 +47,6 @@ public class cartView extends AppCompatActivity {
                     LinearLayoutManager linearLayoutManager = new LinearLayoutManager(cartView.this);
                     recyclerView.setLayoutManager(linearLayoutManager);
                     recyclerView.setAdapter(adapter);
-                    Toast.makeText(cartView.this, "Success", Toast.LENGTH_SHORT).show();
                 } else{
                     Toast.makeText(cartView.this, "Not Success", Toast.LENGTH_SHORT).show();
                 }
