@@ -76,8 +76,6 @@ public class ProductDetailsActivity extends AppCompatActivity {
                 @Override
                 public void onResponse(Call<AddToCartOverview> call, Response<AddToCartOverview> response) {
                     Toast.makeText(ProductDetailsActivity.this, "Added in cart", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(getApplicationContext(), cartView.class);
-                    startActivity(intent);
                 }
 
                 @Override

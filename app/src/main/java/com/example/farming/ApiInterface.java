@@ -29,6 +29,7 @@ public interface ApiInterface {
     Call<ResponseArrayGetAllCartProduct> getAllCartProduct(@Path("num") int num);
 
 @GET("api/cart/removesingle/{num}")
+    Call<RemoveCartItem> getRemoveSingleCartItem(@Path("num") int num);
 
 @Multipart
 @POST("api/farmer/login")

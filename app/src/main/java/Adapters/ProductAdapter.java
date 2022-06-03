@@ -60,7 +60,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.viewHold
         holder.product_details.setText(dataList.get(position).getProduct_details());
         holder.mrpPrice.setText(dataList.get(position).getMrp());
         holder.spPrice.setText(dataList.get(position).getSp());
-        Glide.with(context).load(dataList.get(position).getImage()).into(holder.productImage);
+        Glide.with(context).load(dataList.get(position).getImage()).override(100,100).into(holder.productImage);
 
         holder.itemView.setOnClickListener(view -> {
             Intent productDetailsIntent = new Intent(context, ProductDetailsActivity.class) ;
