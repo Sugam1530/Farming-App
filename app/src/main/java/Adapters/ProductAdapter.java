@@ -68,7 +68,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.viewHold
             context.startActivity(productDetailsIntent);
         });
 
-       }
+    }
 
     @Override
     public int getItemCount() {

@@ -4,6 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,10 +14,19 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.Toolbar;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
+
+import java.util.List;
+
+import Adapters.CategoryAdapter;
+import Adapters.FeaturedProductAdapter;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -22,6 +34,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     androidx.appcompat.widget.Toolbar drawerLayout2;
     NavigationView navigationView;
     ActionBarDrawerToggle toggle;
+    ApiInterface apiInterface;
+    RecyclerView recyclerView;
 
     ImageView addToCart,imageNotification, textNavigation;
 
@@ -60,7 +74,31 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
+        apiInterface = RetrofitInstance.getRetrofit().create(ApiInterface.class);
+        recyclerView = findViewById(R.id.recyclerView);
 
+        apiInterface.getFeaturedProduct().enqueue(new Callback<ResponseArrayFeaturedProductOverview>() {
+            @Override
+            public void onResponse(Call<ResponseArrayFeaturedProductOverview> call, Response<ResponseArrayFeaturedProductOverview> response) {
+                if (response.body() != null){
+                    List<FeaturedProductOverview> productList = response.body().getResponse();
+                    FeaturedProductAdapter adapter = new FeaturedProductAdapter(MainActivity.this, productList);
+                    LinearLayoutManager linearLayoutManager = new LinearLayoutManager(MainActivity.this);
+//                  GridLayoutManager gridLayoutManager = new GridLayoutManager(MainActivity.this, 3);
+                    recyclerView.setLayoutManager(linearLayoutManager);
+                    recyclerView.setAdapter(adapter);
+                    Toast.makeText(MainActivity.this, "Success", Toast.LENGTH_SHORT).show();
+                } else{
+                    Toast.makeText(MainActivity.this, "Not Success", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseArrayFeaturedProductOverview> call, Throwable t) {
+                Toast.makeText(MainActivity.this, t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+
+            }
+        });
 
 
         viewProductAll.setOnClickListener(new View.OnClickListener() {

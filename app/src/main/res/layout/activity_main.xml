@@ -235,6 +235,7 @@
                     app:layout_constraintTop_toBottomOf="@id/layoutCategory"
                     app:layout_editor_absoluteY="0dp">
 
+
                     <TextView
                         android:id="@+id/viewProductAll"
                         android:layout_width="wrap_content"
@@ -256,92 +257,18 @@
                         android:textSize="20sp"
                         android:textStyle="bold" />
 
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_marginTop="10dp"/>
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:layout_gravity="center">
-
-                    <LinearLayout
-                        android:id="@+id/productLinearLayout"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/singlefronview"
-                        android:orientation="vertical"
-                        android:layout_marginRight="30dp">
-
-                        <ImageView
-                            android:id="@+id/productImage"
-                            android:layout_width="35dp"
-                            android:layout_height="35dp"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="10dp"
-                            android:src="@drawable/product1" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="5dp"
-                            android:text="Product1"
-                            android:textColor="@color/black"
-                            android:textSize="15sp"
-                            android:textStyle="bold" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/singlefronview"
-                        android:layout_marginRight="30dp"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:id="@+id/product2Image"
-                            android:layout_width="35dp"
-                            android:layout_height="35dp"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="10dp"
-                            android:src="@drawable/product1" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="5dp"
-                            android:text="Product2"
-                            android:textColor="@color/black"
-                            android:textSize="15sp"
-                            android:textStyle="bold" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/singlefronview"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:id="@+id/product3Image"
-                            android:layout_width="35dp"
-                            android:layout_height="35dp"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="10dp"
-                            android:src="@drawable/product1" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="5dp"
-                            android:text="Product3"
-                            android:textColor="@color/black"
-                            android:textSize="15sp"
-                            android:textStyle="bold" />
-                    </LinearLayout>
                 </LinearLayout>
 
                 </LinearLayout>

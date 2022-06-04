@@ -19,6 +19,9 @@ public interface ApiInterface {
 @GET("api/category/getall")
     Call<ResponseArrayCategoryOverview> getcategory();
 
+@GET("api/product/getfeaturedproduct")
+    Call<ResponseArrayFeaturedProductOverview> getFeaturedProduct();
+
 @GET("api/product/getsingleproduct/{num}")
     Call<ResponseArraySingleProductOverview> getSingleProductDetails(@Path("num") int num);
 
