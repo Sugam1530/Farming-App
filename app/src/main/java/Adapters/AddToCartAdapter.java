@@ -66,7 +66,7 @@ public class AddToCartAdapter extends RecyclerView.Adapter<AddToCartAdapter.view
             ApiInterface apiInterface;
             apiInterface = RetrofitInstance.getRetrofit().create(ApiInterface.class);
 
-            apiInterface.getRemoveSingleCartItem(4).enqueue(new Callback<RemoveCartItem>() {
+            apiInterface.getRemoveSingleCartItem(Integer.parseInt(dataList.get(position).getCart_id())).enqueue(new Callback<RemoveCartItem>() {
                 @Override
                 public void onResponse(Call<RemoveCartItem> call, Response<RemoveCartItem> response) {
                     Toast.makeText(context, "Product has removed from cart, please refresh", Toast.LENGTH_SHORT).show();
