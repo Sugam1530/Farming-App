@@ -100,11 +100,11 @@
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:src="@drawable/ic_baseline_account_balance_wallet_24"
                 android:layout_alignParentRight="true"
-                app:tint="@color/black"
+                android:layout_marginTop="50dp"
                 android:layout_marginRight="30dp"
-                android:layout_marginTop="50dp"/>
+                android:src="@drawable/escannerreal"
+                app:tint="@color/black" />
 
 
         </RelativeLayout>
