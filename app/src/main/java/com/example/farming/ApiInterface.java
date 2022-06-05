@@ -37,8 +37,8 @@ public interface ApiInterface {
 @GET("api/product/getallproductbycat/{num}")
     Call<ResponseArrayProductbyCat> getProductbyCategory(@Path("num") int num);
 
-@GET("api/farmer/getfarmerprofile/{num}")
-    Call<String> getTotalCartPrice(@Path("num") int num);
+@GET("api/cart/total/{num}")
+    Call<ResponseArrayTotalCartPrice> getTotalCartPrice(@Path("num") int num);
 
 @Multipart
 @POST("api/farmer/login")

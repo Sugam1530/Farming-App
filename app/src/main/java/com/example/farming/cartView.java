@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.List;
@@ -26,6 +27,7 @@ public class cartView extends AppCompatActivity {
     ApiInterface apiInterface;
     RecyclerView recyclerView;
     Button btnBack;
+    TextView totalPriceText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,7 @@ public class cartView extends AppCompatActivity {
 
         apiInterface = RetrofitInstance.getRetrofit().create(ApiInterface.class);
         recyclerView = findViewById(R.id.recyclerView);
+        totalPriceText = findViewById(R.id.totalPriceText);
 
 
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(cartView.this);
@@ -55,7 +58,23 @@ public class cartView extends AppCompatActivity {
             @Override
             public void onFailure(Call<ResponseArrayGetAllCartProduct> call, Throwable t) {
                 Toast.makeText(cartView.this, t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
 
+        apiInterface.getTotalCartPrice(Integer.parseInt(userId)).enqueue(new Callback<ResponseArrayTotalCartPrice>() {
+            @Override
+            public void onResponse(Call<ResponseArrayTotalCartPrice> call, Response<ResponseArrayTotalCartPrice> response) {
+                if (response.body() != null && response.body().getResponse() != null){
+                    totalPriceText.setText(response.body().getResponse().getTotal_sum());
+                    Toast.makeText(cartView.this, "Success", Toast.LENGTH_SHORT).show();
+                } else{
+                    Toast.makeText(cartView.this, "Not Success", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseArrayTotalCartPrice> call, Throwable t) {
+                Toast.makeText(cartView.this, t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
             }
         });
 
