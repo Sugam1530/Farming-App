@@ -19,7 +19,6 @@ public class single_product_details extends AppCompatActivity {
 
         btnBack = findViewById(R.id.btnBack);
         tvAddToCart = findViewById(R.id.tvAddToCart);
-        tvBuyNow = findViewById(R.id.tvBuyNow);
 
         btnBack.setOnClickListener(view -> {
             Intent intent = new Intent(getApplicationContext(), product_screen.class);

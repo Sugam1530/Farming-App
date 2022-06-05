@@ -138,14 +138,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
-                    case R.id.menuFavourite:
+                    case R.id.menuWallet:
                         startActivity(new Intent(getApplicationContext(),
                                 activity_favourite.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.menuHome:
                         return true;
-                    case R.id.menuServices:
+                    case R.id.menuProfile:
                         startActivity(new Intent(getApplicationContext(),
                                 activity_services.class));
                         overridePendingTransition(0,0);
