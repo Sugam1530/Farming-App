@@ -83,11 +83,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 if (response.body() != null){
                     List<FeaturedProductOverview> productList = response.body().getResponse();
                     FeaturedProductAdapter adapter = new FeaturedProductAdapter(MainActivity.this, productList);
-                    LinearLayoutManager linearLayoutManager = new LinearLayoutManager(MainActivity.this);
-//                  GridLayoutManager gridLayoutManager = new GridLayoutManager(MainActivity.this, 3);
-                    recyclerView.setLayoutManager(linearLayoutManager);
+                    GridLayoutManager gridLayoutManager = new GridLayoutManager(MainActivity.this, 3);
+                    recyclerView.setLayoutManager(gridLayoutManager);
                     recyclerView.setAdapter(adapter);
-                    Toast.makeText(MainActivity.this, "Success", Toast.LENGTH_SHORT).show();
                 } else{
                     Toast.makeText(MainActivity.this, "Not Success", Toast.LENGTH_SHORT).show();
                 }

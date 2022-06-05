@@ -51,12 +51,12 @@ public class FeaturedProductAdapter extends RecyclerView.Adapter<FeaturedProduct
     public void onBindViewHolder(@NonNull viewHolder holder, int position) {
 
         holder.productName.setText(dataList.get(position).getProduct_name());
-        Glide.with(context).load(dataList.get(position).getImage()).override(100,100).into(holder.image);
+//        Glide.with(context).load(dataList.get(position).getImage()).override(100,100).into(holder.image);
 
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return dataList.size();
     }
 }

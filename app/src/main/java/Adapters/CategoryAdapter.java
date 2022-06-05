@@ -1,6 +1,7 @@
 package Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.farming.CategoryOverview;
 import com.example.farming.CategoryOverview;
+import com.example.farming.ProductDetailsActivity;
+import com.example.farming.Product_by_category;
 import com.example.farming.R;
 
 import java.util.List;
@@ -49,6 +52,10 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.viewHo
     @Override
     public void onBindViewHolder(@NonNull CategoryAdapter.viewHolder holder, int position) {
         holder.category_name.setText(dataList.get(position).getName());
+        holder.itemView.setOnClickListener(v -> {
+            Intent intent = new Intent(context, Product_by_category.class);
+            context.startActivity(intent);
+        });
     }
 
     @Override
