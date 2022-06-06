@@ -1,13 +1,15 @@
 package com.example.farming;
 
+import java.util.List;
+
 public class ResponseArrayTotalCartPrice {
-    private TotalCartPriceOverview response;
+    private List<TotalCartPriceOverview> response;
 
     public ResponseArrayTotalCartPrice()
     {}
 
-    ResponseArrayTotalCartPrice(TotalCartPriceOverview response)
+    ResponseArrayTotalCartPrice(List<TotalCartPriceOverview> response)
     {this.response = response;}
 
-    public TotalCartPriceOverview getResponse() {return this.response;}
+    public List<TotalCartPriceOverview> getResponse() {return this.response;}
 }

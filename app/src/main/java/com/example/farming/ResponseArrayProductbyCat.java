@@ -1,18 +1,20 @@
 package com.example.farming;
 
+import java.util.List;
+
 public class ResponseArrayProductbyCat {
 
-    private ProductbyCategoryOverview response ;
+    private List<ProductbyCategoryOverview> response ;
 
     public ResponseArrayProductbyCat()
     {}
 
-    ResponseArrayProductbyCat(ProductbyCategoryOverview response)
+    ResponseArrayProductbyCat(List<ProductbyCategoryOverview> response)
     {
         this.response = response;
     }
 
-    public ProductbyCategoryOverview getResponse()
+    public List<ProductbyCategoryOverview> getResponse()
     {
         return this.response;
     }

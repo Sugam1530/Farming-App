@@ -71,8 +71,10 @@
 
 
         <RelativeLayout
+            android:id="@+id/bottomPriceDetails"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:visibility="gone">
 
             <TextView
                 android:id="@+id/totalPriceText"
@@ -118,7 +120,7 @@
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="5dp"
                 android:gravity="center"
-                android:text="% Appyly Coupon"
+                android:text="% Apply Coupon"
                 android:textColor="@color/red"
                 android:textSize="15sp"
                 android:textStyle="bold" />

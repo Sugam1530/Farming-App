@@ -33,24 +33,24 @@ public class Product_by_category extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerView);
         btnBack = findViewById(R.id.btnBack);
 
-//        apiInterface.getProductbyCategory(4).enqueue(new Callback<ResponseArrayProductbyCat>() {
-//            @Override
-//            public void onResponse(Call<ResponseArrayProductbyCat> call, Response<ResponseArrayProductbyCat> response) {
-//                if (response.body() != null){
-//                    List<ProductbyCategoryOverview> productList = response.body().getResponse();
-//                    ProductbyCategoryAdapter adapter = new ProductbyCategoryAdapter(Product_by_category.this,productList);
-//                    LinearLayoutManager linearLayoutManager = new LinearLayoutManager(Product_by_category.this);
-//                    recyclerView.setLayoutManager(linearLayoutManager);
-//                    recyclerView.setAdapter(adapter);
-//                }
-//
-//            }
-//
-//            @Override
-//            public void onFailure(Call<ResponseArrayProductbyCat> call, Throwable t) {
-//
-//            }
-//        });
+        apiInterface.getProductbyCategory(Integer.parseInt(getIntent().getStringExtra(getString(R.string.cat_id)))).enqueue(new Callback<ResponseArrayProductbyCat>() {
+            @Override
+            public void onResponse(Call<ResponseArrayProductbyCat> call, Response<ResponseArrayProductbyCat> response) {
+                if (response.body() != null){
+                    List<ProductbyCategoryOverview> productList = response.body().getResponse();
+                    ProductbyCategoryAdapter adapter = new ProductbyCategoryAdapter(Product_by_category.this,productList);
+                    LinearLayoutManager linearLayoutManager = new LinearLayoutManager(Product_by_category.this);
+                    recyclerView.setLayoutManager(linearLayoutManager);
+                    recyclerView.setAdapter(adapter);
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<ResponseArrayProductbyCat> call, Throwable t) {
+
+            }
+        });
 
         btnBack.setOnClickListener(v -> {
             Intent intent = new Intent(getApplicationContext(), category_screen.class);

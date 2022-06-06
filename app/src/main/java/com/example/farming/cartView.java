@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,6 +29,7 @@ public class cartView extends AppCompatActivity {
     RecyclerView recyclerView;
     Button btnBack;
     TextView totalPriceText;
+    RelativeLayout relativeLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +39,7 @@ public class cartView extends AppCompatActivity {
         apiInterface = RetrofitInstance.getRetrofit().create(ApiInterface.class);
         recyclerView = findViewById(R.id.recyclerView);
         totalPriceText = findViewById(R.id.totalPriceText);
+        relativeLayout = findViewById(R.id.bottomPriceDetails);
 
 
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(cartView.this);
@@ -44,19 +47,21 @@ public class cartView extends AppCompatActivity {
         apiInterface.getAllCartProduct(Integer.parseInt(userId)).enqueue(new Callback<ResponseArrayGetAllCartProduct>() {
             @Override
             public void onResponse(Call<ResponseArrayGetAllCartProduct> call, Response<ResponseArrayGetAllCartProduct> response) {
-                if (response.body() != null){
+                if (response.body() != null && response.body().getResponse().size()> 0){
+                    relativeLayout.setVisibility(View.VISIBLE);
                     List<GetAllCartProduct> productList = response.body().getResponse();
                     AddToCartAdapter adapter = new AddToCartAdapter(cartView.this,productList);
                     LinearLayoutManager linearLayoutManager = new LinearLayoutManager(cartView.this);
                     recyclerView.setLayoutManager(linearLayoutManager);
                     recyclerView.setAdapter(adapter);
                 } else{
-                    Toast.makeText(cartView.this, "Not Success", Toast.LENGTH_SHORT).show();
+                    relativeLayout.setVisibility(View.GONE);
                 }
             }
 
             @Override
             public void onFailure(Call<ResponseArrayGetAllCartProduct> call, Throwable t) {
+                relativeLayout.setVisibility(View.GONE);
                 Toast.makeText(cartView.this, t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
             }
         });
@@ -65,10 +70,8 @@ public class cartView extends AppCompatActivity {
             @Override
             public void onResponse(Call<ResponseArrayTotalCartPrice> call, Response<ResponseArrayTotalCartPrice> response) {
                 if (response.body() != null && response.body().getResponse() != null){
-                    totalPriceText.setText(response.body().getResponse().getTotal_sum());
-                    Toast.makeText(cartView.this, "Success", Toast.LENGTH_SHORT).show();
+                    totalPriceText.setText(response.body().getResponse().get(0).getTotal_sum());
                 } else{
-                    Toast.makeText(cartView.this, "Not Success", Toast.LENGTH_SHORT).show();
                 }
             }
 
