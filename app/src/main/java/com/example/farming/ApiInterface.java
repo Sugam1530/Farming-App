@@ -43,6 +43,9 @@ public interface ApiInterface {
 @GET("api/cart/total/{num}")
     Call<ResponseArrayTotalCartPrice> getTotalCartPrice(@Path("num") int num);
 
+@GET("api/wallet/alltransactions/{num}")
+    Call<ResponseArrayTransactionHistory> getTransactionHistory(@Path("num") int num);
+
 @Multipart
 @POST("api/farmer/login")
     Call<ResponseArrayFarmerLoginOverview> postFarmerLogin (@Part("username") RequestBody username, @Part("password") RequestBody password);

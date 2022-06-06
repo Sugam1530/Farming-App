@@ -56,6 +56,7 @@ public class cartView extends AppCompatActivity {
                     recyclerView.setAdapter(adapter);
                 } else{
                     relativeLayout.setVisibility(View.GONE);
+                    Toast.makeText(cartView.this, "Your cart is empty", Toast.LENGTH_SHORT).show();
                 }
             }
 

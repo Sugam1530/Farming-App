@@ -63,114 +63,13 @@
         app:layout_constraintBottom_toBottomOf="@+id/farmingLayoutHeader"
         android:background="#f7f7f7">
 
-        <TextView
-            android:id="@+id/paidProduct1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="80dp"
-            android:text="Paid for Product"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/paidDate1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/paidProduct1"
-            android:layout_marginStart="35dp"
-            android:padding="5dp"
-            android:text="21 Jan, 11:02 am"
-            android:textSize="12sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/rupees1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_marginStart="35dp"
-            android:layout_marginTop="95dp"
-            android:layout_marginEnd="20dp"
-            android:text="30.00/-"
-            android:textColor="@color/red"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/paidProduct2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/paidDate1"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="30dp"
-            android:text="Added to wallet"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/paidDate2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/paidProduct2"
-            android:layout_marginStart="35dp"
-            android:padding="5dp"
-            android:text="12 Jan, 10:00 am"
-            android:textSize="12sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/rupees2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/rupees1"
-            android:layout_alignParentRight="true"
-            android:layout_marginStart="35dp"
-            android:layout_marginTop="55dp"
-            android:layout_marginEnd="20dp"
-            android:text="30.00/-"
-            android:textColor="@color/farming_main"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/paidProduct3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="50dp"
-            android:layout_below="@+id/paidProduct2"
-            android:text="Paid for Product-2"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/paidDate3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/paidProduct3"
-            android:layout_marginStart="35dp"
-            android:padding="5dp"
-            android:text="10 Jan, 16:02 pm"
-            android:textSize="12sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/rupees3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/rupees2"
-            android:layout_alignParentRight="true"
-            android:layout_marginStart="35dp"
-            android:layout_marginTop="55dp"
-            android:layout_marginEnd="20dp"
-            android:text="30.00/-"
-            android:textColor="@color/red"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="100dp" />
 
     </RelativeLayout>
 
