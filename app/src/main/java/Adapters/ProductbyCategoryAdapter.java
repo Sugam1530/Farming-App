@@ -46,7 +46,7 @@ public class ProductbyCategoryAdapter extends RecyclerView.Adapter<ProductbyCate
         Glide.with(context).load(datalist.get(position).getImage()).override(100,100).into(holder.productImage);
 
         holder.itemView.setOnClickListener(view -> {
-            Intent productDetailsIntent = new Intent(context, ProductbyCategoryAdapter.class) ;
+            Intent productDetailsIntent = new Intent(context, ProductDetailsActivity.class) ;
             productDetailsIntent.putExtra(context.getString(R.string.productId), datalist.get(position).getId());
             context.startActivity(productDetailsIntent);
         });

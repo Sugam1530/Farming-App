@@ -174,18 +174,6 @@
 
                 </RelativeLayout>
 
-                <TextView
-                    android:layout_width="300dp"
-                    android:layout_height="40dp"
-                    android:text="Delivery in 2 days, Friday"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:background="@drawable/singlefronview"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginTop="10dp"
-                    android:textSize="18sp"
-                    android:textAlignment="center"/>
-
                 </LinearLayout>
 
         </ScrollView>

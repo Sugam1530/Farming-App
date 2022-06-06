@@ -60,7 +60,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="@+id/farmingLayoutHeader"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="#f7f7f7">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
