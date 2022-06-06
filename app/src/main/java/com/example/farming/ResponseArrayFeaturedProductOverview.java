@@ -13,7 +13,6 @@ public class ResponseArrayFeaturedProductOverview {
     }
     public List<FeaturedProductOverview> getResponse()
     {
-
         return this.response;
     }
 }

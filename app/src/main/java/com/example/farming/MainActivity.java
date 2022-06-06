@@ -23,6 +23,7 @@ import com.google.android.material.navigation.NavigationView;
 import java.util.List;
 
 import Adapters.CategoryAdapter;
+import Adapters.FeaturedCategoryAdapter;
 import Adapters.FeaturedProductAdapter;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     ActionBarDrawerToggle toggle;
     ApiInterface apiInterface;
     RecyclerView recyclerView;
+    RecyclerView recyclerViewCat;
 
     ImageView addToCart,imageNotification, textNavigation;
 
@@ -76,6 +78,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         apiInterface = RetrofitInstance.getRetrofit().create(ApiInterface.class);
         recyclerView = findViewById(R.id.recyclerView);
+        recyclerViewCat = findViewById(R.id.recyclerViewCat);
 
         apiInterface.getFeaturedProduct().enqueue(new Callback<ResponseArrayFeaturedProductOverview>() {
             @Override
@@ -94,6 +97,25 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onFailure(Call<ResponseArrayFeaturedProductOverview> call, Throwable t) {
                 Toast.makeText(MainActivity.this, t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+        apiInterface.getFeaturedCategory().enqueue(new Callback<ResponseArrayFeaturedCategoryOverview>() {
+            @Override
+            public void onResponse(Call<ResponseArrayFeaturedCategoryOverview> call, Response<ResponseArrayFeaturedCategoryOverview> response) {
+                if (response.body() != null){
+                    List<FeaturedCategoryOverview> categoryList = response.body().getResponse();
+                    FeaturedCategoryAdapter adapter = new FeaturedCategoryAdapter(MainActivity.this, categoryList);
+                    GridLayoutManager gridLayoutManager = new GridLayoutManager(MainActivity.this, 3);
+                    recyclerViewCat.setLayoutManager(gridLayoutManager);
+                    recyclerViewCat.setAdapter(adapter);
+                    Toast.makeText(MainActivity.this, "Success", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseArrayFeaturedCategoryOverview> call, Throwable t) {
 
             }
         });
