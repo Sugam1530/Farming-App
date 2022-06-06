@@ -21,7 +21,6 @@ public class product_screen extends AppCompatActivity {
 
     ApiInterface apiInterface;
     RecyclerView recyclerView;
-
     TextView btnBack,filter;
 
     @Override
