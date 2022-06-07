@@ -47,7 +47,7 @@
     <GridLayout
         android:id="@+id/mainHomeImage"
         android:layout_width="350dp"
-        android:layout_height="200dp"
+        android:layout_height="250dp"
         android:background="@color/white"
         android:elevation="500dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -98,12 +98,29 @@
                 android:textSize="20sp" />
 
             <ImageView
+                android:id="@+id/ivScaner"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="30dp"
                 android:src="@drawable/escannerreal" />
+
+            <TextView
+                android:id="@+id/scantext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/transactionHistory"
+                android:layout_marginStart="57dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="5dp"
+                android:text="Scan Text"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+
 
 
         </RelativeLayout>

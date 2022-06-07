@@ -22,6 +22,8 @@ public class activity_favourite extends AppCompatActivity {
 
     ApiInterface apiInterface;
     TextView transactionHistory,tvTotalMoney;
+    ImageView btnBack, ivScanner;
+    public static TextView  scantext;
 
 
     @Override
@@ -33,6 +35,8 @@ public class activity_favourite extends AppCompatActivity {
         transactionHistory = findViewById(R.id.transactionHistory);
         tvTotalMoney = findViewById(R.id.totalMoney);
         apiInterface = RetrofitInstance.getRetrofit().create(ApiInterface.class);
+        scantext = findViewById(R.id.scantext);
+        ivScanner = findViewById(R.id.ivScaner);
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationMenu);
 
@@ -80,6 +84,11 @@ public class activity_favourite extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), transaction_history.class);
                 startActivity(intent);
             }
+        });
+
+        ivScanner.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(), scannerView.class);
+            startActivity(intent);
         });
     }
 }

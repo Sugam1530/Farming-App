@@ -16,8 +16,9 @@ import retrofit2.Response;
 
 public class Wallet_view extends AppCompatActivity {
     ApiInterface apiInterface;
-    ImageView btnBack;
+    ImageView btnBack, ivScanner;
     TextView transactionHistory,tvTotalMoney;
+    public static TextView  scantext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +29,8 @@ public class Wallet_view extends AppCompatActivity {
         transactionHistory = findViewById(R.id.transactionHistory);
         tvTotalMoney = findViewById(R.id.totalMoney);
         apiInterface = RetrofitInstance.getRetrofit().create(ApiInterface.class);
+        scantext = findViewById(R.id.scantext);
+        ivScanner = findViewById(R.id.ivScaner);
 
 
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(Wallet_view.this);
@@ -62,6 +65,9 @@ public class Wallet_view extends AppCompatActivity {
             }
         });
 
-
+        ivScanner.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(), scannerView.class);
+            startActivity(intent);
+        });
     }
 }
