@@ -46,6 +46,9 @@ public interface ApiInterface {
 @GET("api/wallet/alltransactions/{num}")
     Call<ResponseArrayTransactionHistory> getTransactionHistory(@Path("num") int num);
 
+@GET("api/wallet/walletscan/{amountnum}/{farmernum}")
+    Call<WalletScanOverview> getWalletScan(@Path("amountnum") int amountnum, @Path("farmernum") int farmernum);
+
 @Multipart
 @POST("api/farmer/login")
     Call<ResponseArrayFarmerLoginOverview> postFarmerLogin (@Part("username") RequestBody username, @Part("password") RequestBody password);
