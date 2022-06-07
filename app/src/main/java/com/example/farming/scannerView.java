@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
 import android.os.Bundle;
+import android.view.View;
 
 import com.google.zxing.Result;
 import com.karumi.dexter.Dexter;
@@ -46,8 +47,13 @@ public class scannerView extends AppCompatActivity implements ZXingScannerView.R
 
     @Override
     public void handleResult(Result result) {
-        Wallet_view.scantext.setText(result.getText());
-        onBackPressed();
+        if (result.getText() != null) {
+            Wallet_view.scantext.setText(result.getText());
+            onBackPressed();
+            Wallet_view.scantext.setVisibility(View.VISIBLE);
+        } else {
+            Wallet_view.scantext.setVisibility(View.GONE);
+        }
     }
 
     @Override
