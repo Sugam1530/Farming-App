@@ -10,7 +10,6 @@
     android:fitsSystemWindows="true"
     tools:openDrawer="start">
 
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -136,6 +135,7 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:layout_gravity="center">
+
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/recyclerViewCat"
                             android:layout_width="match_parent"
@@ -143,6 +143,7 @@
                             app:layout_constraintTop_toTopOf="parent"
                             android:layout_marginTop="10dp"/>
                     </LinearLayout>
+
                 </LinearLayout>
 
                 <LinearLayout
