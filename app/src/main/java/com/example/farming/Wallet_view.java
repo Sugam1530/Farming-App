@@ -67,6 +67,7 @@ public class Wallet_view extends AppCompatActivity {
 
         ivScanner.setOnClickListener(v -> {
             Intent intent = new Intent(getApplicationContext(), scannerView.class);
+                intent.putExtra("calling_activity", "walletView") ;
             startActivity(intent);
         });
     }

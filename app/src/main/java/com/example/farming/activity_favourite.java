@@ -88,6 +88,7 @@ public class activity_favourite extends AppCompatActivity {
 
         ivScanner.setOnClickListener(v -> {
             Intent intent = new Intent(getApplicationContext(), scannerView.class);
+            intent.putExtra("calling_activity", "activityFavourite") ;
             startActivity(intent);
         });
     }
