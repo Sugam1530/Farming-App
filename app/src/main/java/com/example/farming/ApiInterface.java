@@ -47,7 +47,7 @@ public interface ApiInterface {
     Call<ResponseArrayTransactionHistory> getTransactionHistory(@Path("num") int num);
 
 @Multipart
-@GET("api/wallet/walletscan")
+@POST("api/wallet/walletscan")
     Call<WalletScanOverview> getWalletScan(@Part("amount") RequestBody amount, @Part("farmerid") RequestBody farmerid);
 
 @Multipart

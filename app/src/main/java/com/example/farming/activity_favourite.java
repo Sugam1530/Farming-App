@@ -21,7 +21,7 @@ import retrofit2.Response;
 public class activity_favourite extends AppCompatActivity {
 
     ApiInterface apiInterface;
-    TextView transactionHistory,tvTotalMoney;
+    public static TextView transactionHistory,tvTotalMoney;
     ImageView btnBack, ivScanner;
     public static TextView  scantext;
 

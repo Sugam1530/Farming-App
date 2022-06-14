@@ -17,7 +17,7 @@ import retrofit2.Response;
 public class Wallet_view extends AppCompatActivity {
     ApiInterface apiInterface;
     ImageView btnBack, ivScanner;
-    TextView transactionHistory,tvTotalMoney;
+    public static TextView transactionHistory,tvTotalMoney;
     public static TextView  scantext;
 
     @Override
