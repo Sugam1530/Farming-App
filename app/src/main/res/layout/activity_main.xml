@@ -109,26 +109,35 @@
                     tools:ignore="MissingConstraints"
                     tools:layout_editor_absoluteY="0dp">
 
-                    <TextView
-                        android:id="@+id/categoryViewAll"
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="View All"
-                        android:textStyle="bold"
-                        android:textSize="15sp"
-                        android:textColor="#1bda9a"
-                        android:layout_gravity="end" />
+                        android:layout_marginStart="15dp">
 
-                    <TextView
-                        android:id="@+id/textCategory"
-                        style="bold"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="top"
-                        android:text="Categories"
-                        android:textColor="@color/black"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/textCategory"
+                            style="bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:text="Categories"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/categoryViewAll"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="View All"
+                            android:textStyle="bold"
+                            android:textSize="15sp"
+                            android:textColor="#1bda9a"
+                            android:layout_gravity="end"
+                            android:layout_marginStart="140dp"
+                            android:paddingTop="5dp"/>
+
+                    </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -162,26 +171,34 @@
                     app:layout_editor_absoluteY="0dp">
 
 
-                    <TextView
-                        android:id="@+id/viewProductAll"
+                    <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="end"
-                        android:text="View All"
-                        android:textColor="#1bda9a"
-                        android:textSize="15sp"
-                        android:textStyle="bold" />
+                        android:layout_height="wrap_content">
 
-                    <TextView
-                        android:id="@+id/textProduct"
-                        style="bold"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="top"
-                        android:text="Product"
-                        android:textColor="@color/black"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/textProduct"
+                            style="bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:text="Products"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/viewProductAll"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="View All"
+                            android:textStyle="bold"
+                            android:textSize="15sp"
+                            android:textColor="#1bda9a"
+                            android:layout_gravity="end"
+                            android:layout_marginStart="150dp"
+                            android:paddingTop="5dp"/>
+
+                    </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="wrap_content"

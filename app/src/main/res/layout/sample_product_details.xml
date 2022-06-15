@@ -54,10 +54,10 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:padding="5dp">
 
@@ -110,7 +110,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginStart="10dp"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="12dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="10dp"
                         android:text="M.R.P -"
@@ -125,8 +125,7 @@
                         android:layout_below="@+id/mrpProductPrice"
                         android:layout_gravity="center"
                         android:layout_marginStart="10dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginEnd="10dp"
+                        android:layout_marginTop="7dp"
                         android:layout_marginBottom="10dp"
                         android:text="S.P -"
                         android:textColor="@color/black"
@@ -134,26 +133,51 @@
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/signMRP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_toRightOf="@+id/mrpProductPrice"
+                        android:text="₹"
+                        android:textColor="@color/farming_main"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+
+                    <TextView
                         android:id="@+id/tvmrpProductPrice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="15dp"
                         android:layout_marginEnd="10dp"
-                        android:layout_toRightOf="@+id/mrpProductPrice"
+                        android:layout_toRightOf="@+id/signMRP"
                         android:text="S.P -"
                         android:textColor="@color/black"
                         android:textSize="15sp"
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/signSP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="55dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_toRightOf="@+id/spProductPrice"
+                        android:layout_marginStart="10dp"
+                        android:text="₹"
+                        android:textColor="@color/farming_main"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
                         android:id="@+id/tvspProductPrice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
+                        android:layout_marginStart="3dp"
                         android:layout_marginTop="55dp"
                         android:layout_marginEnd="10dp"
-                        android:layout_toRightOf="@+id/spProductPrice"
+                        android:layout_toRightOf="@+id/signSP"
                         android:text="S.P -"
                         android:textColor="@color/black"
                         android:textSize="20sp"
@@ -185,11 +209,6 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/productDetailsCardView"
         android:orientation="vertical">
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="@android:color/black" />
 
         <LinearLayout
             android:layout_width="match_parent"
