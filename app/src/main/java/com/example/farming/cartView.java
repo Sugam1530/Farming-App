@@ -28,7 +28,7 @@ public class cartView extends AppCompatActivity {
 
     ApiInterface apiInterface;
     RecyclerView recyclerView;
-    Button btnBack;
+    TextView btnBack;
     TextView totalPriceText;
     RelativeLayout relativeLayout;
 

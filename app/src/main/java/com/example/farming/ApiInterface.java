@@ -9,6 +9,7 @@ import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 public interface ApiInterface {
 
@@ -46,9 +47,8 @@ public interface ApiInterface {
 @GET("api/wallet/alltransactions/{num}")
     Call<ResponseArrayTransactionHistory> getTransactionHistory(@Path("num") int num);
 
-@Multipart
-@POST("api/wallet/walletscan")
-    Call<WalletScanOverview> getWalletScan(@Part("amount") RequestBody amount, @Part("farmerid") RequestBody farmerid);
+@GET("api/wallet/walletscan?")
+    Call<WalletScanOverview> getWalletScan(@Query("amount") int amount, @Query("farmerid") int farmerid);
 
 @Multipart
 @POST("api/farmer/login")

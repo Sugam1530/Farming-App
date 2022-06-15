@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.List;
@@ -22,7 +23,7 @@ import retrofit2.Response;
 
 public class transaction_history extends AppCompatActivity {
 
-    Button btnBack;
+    TextView btnBack;
     ApiInterface apiInterface;
     RecyclerView recyclerView;
 

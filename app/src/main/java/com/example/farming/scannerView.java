@@ -3,7 +3,10 @@ package com.example.farming;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Toast;
 
@@ -25,6 +28,7 @@ import retrofit2.Response;
 public class scannerView extends AppCompatActivity implements ZXingScannerView.ResultHandler {
     ZXingScannerView scannerView;
     ApiInterface apiInterface ;
+    String farmerId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,16 +58,17 @@ public class scannerView extends AppCompatActivity implements ZXingScannerView.R
 
     @Override
     public void handleResult(Result result) {
-        final RequestBody amountRequestBody = RequestBody.create(MediaType.parse("text/plain"), String.valueOf(27));
-        final RequestBody farmerIdRequestBody = RequestBody.create(MediaType.parse("text/plain"), String.valueOf(1));
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(scannerView.this);
+        String userId = preferences.getString("userId", "");
         if(getIntent().getStringExtra("calling_activity").equals("walletView")) {
             Wallet_view.scantext.setText(result.getText());
             onBackPressed();
             Wallet_view.scantext.setVisibility(View.VISIBLE);
-            apiInterface.getWalletScan(amountRequestBody,farmerIdRequestBody).enqueue(new Callback<WalletScanOverview>() {
+            String[] walletTopUp = result.getText().split("//");
+            apiInterface.getWalletScan(Integer.parseInt(walletTopUp[1]),Integer.parseInt(userId)).enqueue(new Callback<WalletScanOverview>() {
                 @Override
                 public void onResponse(Call<WalletScanOverview> call, Response<WalletScanOverview> response) {
-                    Wallet_view.tvTotalMoney.setText(Integer.parseInt(Wallet_view.tvTotalMoney.getText().toString())+27) ;
+                    startActivity(new Intent(scannerView.this, Wallet_view.class ));
                 }
 
                 @Override
@@ -77,10 +82,11 @@ public class scannerView extends AppCompatActivity implements ZXingScannerView.R
             activity_favourite.scantext.setText(result.getText());
             onBackPressed();
             activity_favourite.scantext.setVisibility(View.VISIBLE);
-            apiInterface.getWalletScan(amountRequestBody,farmerIdRequestBody).enqueue(new Callback<WalletScanOverview>() {
+            String[] walletTopUp = result.getText().split("//");
+            apiInterface.getWalletScan(Integer.parseInt(walletTopUp[1]),Integer.parseInt(userId)).enqueue(new Callback<WalletScanOverview>() {
                 @Override
                 public void onResponse(Call<WalletScanOverview> call, Response<WalletScanOverview> response) {
-                    activity_favourite.tvTotalMoney.setText(Integer.parseInt(activity_favourite.tvTotalMoney.getText().toString())+27) ;
+                    startActivity(new Intent(scannerView.this, activity_favourite.class ));
                 }
 
                 @Override

@@ -41,8 +41,6 @@ public class ProductDetailsActivity extends AppCompatActivity {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(ProductDetailsActivity.this);
         farmerId = preferences.getString("userId", "");
 
-
-
         apiInterface.getSingleProductDetails(Integer.parseInt(getIntent().getStringExtra(getString(R.string.productId)))).enqueue(new Callback<ResponseArraySingleProductOverview>() {
             @Override
             public void onResponse(Call<ResponseArraySingleProductOverview> call, Response<ResponseArraySingleProductOverview> response) {

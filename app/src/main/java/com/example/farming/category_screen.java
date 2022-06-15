@@ -44,10 +44,7 @@ public class category_screen extends AppCompatActivity {
 
                     GridLayoutManager gridLayoutManager = new GridLayoutManager(category_screen.this, 3);
                     recyclerView.setLayoutManager(gridLayoutManager);
-
                     recyclerView.setAdapter(adapter);
-
-                    Toast.makeText(category_screen.this, "Success", Toast.LENGTH_SHORT).show();
                 } else{
                     Toast.makeText(category_screen.this, "Not Success", Toast.LENGTH_SHORT).show();
                 }
