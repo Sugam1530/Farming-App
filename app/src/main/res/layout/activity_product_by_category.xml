@@ -20,10 +20,10 @@
         android:outlineSpotShadowColor="@color/black"
         android:outlineAmbientShadowColor="@color/black">
 
-        <Button
+        <TextView
             android:id="@+id/btnBack"
-            android:layout_width="40dp"
-            android:layout_height="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/ic_baseline_keyboard_backspace_24"
@@ -37,11 +37,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
+            android:layout_marginTop="2dp"
             android:paddingTop="15dp"
             android:gravity="center"
             android:text="Product by  category"
             android:textColor="@color/white"
-            android:textSize="22sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf= "@id/btnBack"
             app:layout_constraintTop_toTopOf="parent" />
@@ -56,16 +57,15 @@
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:layout_marginTop="4dp"
-        android:background="@android:color/black"
+        android:background="@color/Login_btn_color"
         app:layout_constraintTop_toBottomOf="@+id/farmingLayoutHeader"/>
-
 
     <View
         android:id="@+id/underCompare"
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:layout_marginTop="8dp"
-        android:background="@android:color/black"
+        android:background="@color/Login_btn_color"
         app:layout_constraintTop_toBottomOf="@+id/sort"/>
 
     <TextView
@@ -99,7 +99,7 @@
         android:id="@+id/rightSort"
         android:layout_width="2dp"
         android:layout_height="37dp"
-        android:background="@android:color/black"
+        android:background="@color/Login_btn_color"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintRight_toRightOf="@+id/sort"
         app:layout_constraintStart_toStartOf="parent"

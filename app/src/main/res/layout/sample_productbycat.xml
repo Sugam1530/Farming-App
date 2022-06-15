@@ -6,7 +6,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="240dp"
+        android:layout_height="200dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
@@ -46,12 +46,11 @@
                 android:id="@+id/product_details"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_marginStart="10dp"
                 android:maxLines="2"
                 android:text="Product Description"
                 android:textColor="@color/black"
-                android:textSize="15sp"
-                android:textStyle="bold" />
+                android:textSize="15sp" />
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -63,9 +62,23 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
                     android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
                     android:text="MRP:"
                     android:textColor="@color/black"
                     android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/signMRP"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_toRightOf="@+id/mrpProduct"
+                    android:text="₹"
+                    android:textColor="@color/farming_main"
+                    android:textSize="15dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -73,7 +86,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
-                    android:layout_marginEnd="120dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="110dp"
                     android:text="899"
                     android:textColor="@color/farming_main"
                     android:textSize="12dp"
@@ -84,10 +98,27 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/mrpProduct"
-                    android:layout_margin="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
                     android:text="SP:"
                     android:textColor="@color/black"
                     android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/signSP"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/mrpProduct"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_toRightOf="@+id/spProduct"
+                    android:text="₹"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -96,8 +127,8 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/mrpPrice"
                     android:layout_alignParentRight="true"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="100dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="80dp"
                     android:text="899"
                     android:textColor="@color/black"
                     android:textSize="20sp"
@@ -111,8 +142,8 @@
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="170dp"
-            android:layout_marginRight="20dp"
+            android:layout_marginTop="140dp"
+            android:layout_marginRight="30dp"
             android:layout_marginBottom="20dp"
             android:background="@drawable/add_to_cart"
             android:text="Add To Cart"

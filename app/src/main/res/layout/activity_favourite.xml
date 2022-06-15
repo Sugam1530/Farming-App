@@ -36,7 +36,7 @@
         android:id="@+id/mainHomeImage"
         android:layout_width="350dp"
         android:layout_height="190dp"
-        android:background="@color/white"
+        android:background="@drawable/frontshape"
         android:elevation="100dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.48"

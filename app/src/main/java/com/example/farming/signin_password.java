@@ -57,6 +57,8 @@ public class signin_password extends AppCompatActivity {
                                     editor.apply();
                                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                                     startActivity(intent);
+                                } else{
+                                    Toast.makeText(signin_password.this, "Please Provide Correct Details", Toast.LENGTH_SHORT).show();
                                 }
                             }
 
