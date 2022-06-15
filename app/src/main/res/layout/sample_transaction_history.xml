@@ -6,7 +6,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="70dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
@@ -28,7 +28,7 @@
                 android:layout_marginTop="10dp"
                 android:text="Paid for Product"
                 android:textColor="@color/black"
-                android:textSize="22sp"
+                android:textSize="15sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -36,7 +36,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/paidProduct1"
-                android:layout_marginStart="35dp"
+                android:layout_marginStart="15dp"
                 android:padding="5dp"
                 android:text="21 Jan, 11:02 am"
                 android:textSize="15sp"
@@ -51,7 +51,7 @@
                 android:layout_marginEnd="15dp"
                 android:text="30"
                 android:textColor="@color/farming_main"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -61,7 +61,7 @@
                 android:layout_toRightOf="@+id/tvamount"
                 android:text="/-"
                 android:textColor="@color/farming_main"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
         </RelativeLayout>
