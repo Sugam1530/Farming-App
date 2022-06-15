@@ -24,7 +24,7 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/ic_baseline_keyboard_backspace_24"
             android:foregroundTint="@color/white"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="@color/black"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
