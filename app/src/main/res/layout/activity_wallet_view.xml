@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Wallet_view"
-    android:background="#b2bed1">
+    android:background="@color/white">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layoutheader"
@@ -47,9 +47,9 @@
     <GridLayout
         android:id="@+id/mainHomeImage"
         android:layout_width="350dp"
-        android:layout_height="250dp"
+        android:layout_height="200dp"
         android:background="@color/white"
-        android:elevation="500dp"
+        android:elevation="100dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintStart_toStartOf="parent"
@@ -85,6 +85,16 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textbalance"
+                android:layout_marginLeft="140dp"
+                android:text="/-"
+                android:textColor="@color/black"
+                android:textSize="23dp"
+                android:textStyle="bold" />
+
+            <TextView
                 android:id="@+id/transactionHistory"
                 android:layout_width="300dp"
                 android:layout_height="40dp"
@@ -100,9 +110,9 @@
             <ImageView
                 android:id="@+id/ivScaner"
                 android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_height="130dp"
                 android:layout_alignParentRight="true"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="25dp"
                 android:layout_marginRight="30dp"
                 android:src="@drawable/escannerreal" />
 

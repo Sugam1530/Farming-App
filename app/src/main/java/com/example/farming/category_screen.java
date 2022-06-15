@@ -42,7 +42,7 @@ public class category_screen extends AppCompatActivity {
                     CategoryAdapter adapter = new CategoryAdapter(category_screen.this,categoryList);
                     LinearLayoutManager linearLayoutManager = new LinearLayoutManager(category_screen.this);
 
-                    GridLayoutManager gridLayoutManager = new GridLayoutManager(category_screen.this, 2);
+                    GridLayoutManager gridLayoutManager = new GridLayoutManager(category_screen.this, 3);
                     recyclerView.setLayoutManager(gridLayoutManager);
 
                     recyclerView.setAdapter(adapter);

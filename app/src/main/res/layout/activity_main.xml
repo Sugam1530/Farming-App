@@ -40,23 +40,23 @@
                 android:id="@+id/appName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="40dp"
                 android:gravity="center"
                 android:text="Farming"
                 android:textColor="@color/white"
                 android:textSize="25sp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toStartOf="@+id/addToCart"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
 
             <ImageView
                 android:id="@+id/addToCart"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:paddingEnd="10dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="20dp"
                 android:src="@drawable/ic_baseline_shopping_cart_24"
                 app:layout_constraintBottom_toBottomOf="@id/appName"

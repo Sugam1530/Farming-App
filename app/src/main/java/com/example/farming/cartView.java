@@ -1,6 +1,7 @@
 package com.example.farming;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -54,6 +55,8 @@ public class cartView extends AppCompatActivity {
                     LinearLayoutManager linearLayoutManager = new LinearLayoutManager(cartView.this);
                     recyclerView.setLayoutManager(linearLayoutManager);
                     recyclerView.setAdapter(adapter);
+                    DividerItemDecoration itemDecoration = new DividerItemDecoration(getApplicationContext(), DividerItemDecoration.VERTICAL);
+                    recyclerView.addItemDecoration(itemDecoration);
                 } else{
                     relativeLayout.setVisibility(View.GONE);
                     Toast.makeText(cartView.this, "Your cart is empty", Toast.LENGTH_SHORT).show();

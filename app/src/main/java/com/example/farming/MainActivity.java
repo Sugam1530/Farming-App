@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 if (response.body() != null){
                     List<FeaturedCategoryOverview> categoryList = response.body().getResponse();
                     FeaturedCategoryAdapter adapter = new FeaturedCategoryAdapter(MainActivity.this, categoryList);
-                    GridLayoutManager gridLayoutManager = new GridLayoutManager(MainActivity.this, 2);
+                    GridLayoutManager gridLayoutManager = new GridLayoutManager(MainActivity.this, 3);
                     recyclerViewCat.setLayoutManager(gridLayoutManager);
                     recyclerViewCat.setAdapter(adapter);
                 }

@@ -91,7 +91,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/headerLine"
         android:src="@drawable/ic_baseline_sort_24"
-        android:layout_marginLeft="25dp">
+        android:layout_marginLeft="45dp">
 
     </ImageView>
 
@@ -128,7 +128,7 @@
         app:layout_constraintLeft_toLeftOf="@+id/rightSort"
         app:layout_constraintTop_toBottomOf="@+id/headerLine"
         android:src="@drawable/ic_baseline_filter_alt_24"
-        android:layout_marginLeft="25dp">
+        android:layout_marginLeft="45dp">
 
     </ImageView>
 
