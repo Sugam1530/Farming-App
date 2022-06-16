@@ -25,12 +25,13 @@ public class TransactionHistoryAdapter extends RecyclerView.Adapter<TransactionH
     }
 
     public class viewHolder extends RecyclerView.ViewHolder{
-        TextView tvAmount;
+        TextView tvAmount, paidDate;
 
         public viewHolder(@NonNull View itemView) {
             super(itemView);
 
             tvAmount = itemView.findViewById(R.id.tvamount);
+            paidDate = itemView.findViewById(R.id.paidDate1);
 
         }
     }
@@ -47,6 +48,7 @@ public class TransactionHistoryAdapter extends RecyclerView.Adapter<TransactionH
     @Override
     public void onBindViewHolder(@NonNull viewHolder holder, int position) {
         holder.tvAmount.setText(dataList.get(position).getAmount());
+        holder.paidDate.setText(dataList.get(position).getCreated_at());
 
     }
 
