@@ -28,8 +28,8 @@ public class cartView extends AppCompatActivity {
 
     ApiInterface apiInterface;
     RecyclerView recyclerView;
-    TextView btnBack;
-    TextView totalPriceText;
+    TextView btnBack, applyCoupon;
+    public static TextView totalPriceText;
     RelativeLayout relativeLayout;
 
     @Override
@@ -41,6 +41,7 @@ public class cartView extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerView);
         totalPriceText = findViewById(R.id.totalPriceText);
         relativeLayout = findViewById(R.id.bottomPriceDetails);
+        applyCoupon = findViewById(R.id.applyCoupon);
 
 
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(cartView.this);
@@ -93,6 +94,11 @@ public class cartView extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(),MainActivity.class);
                 startActivity(intent);
             }
+        });
+
+        applyCoupon.setOnClickListener(v -> {
+            BottomSheetFragment bottomSheetFragment = new BottomSheetFragment();
+            bottomSheetFragment.show(getSupportFragmentManager(), bottomSheetFragment.getTag());
         });
     }
 }

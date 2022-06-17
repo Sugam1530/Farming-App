@@ -50,6 +50,9 @@ public interface ApiInterface {
 @GET("api/wallet/walletscan?")
     Call<WalletScanOverview> getWalletScan(@Query("amount") int amount, @Query("farmerid") int farmerid);
 
+@GET("api/coupons/couponeligability?")
+    Call<ResponseArrayApplyCouponOverview> getApplyCoupon(@Query("coupon_name") String coupon_name);
+
 @Multipart
 @POST("api/farmer/login")
     Call<ResponseArrayFarmerLoginOverview> postFarmerLogin (@Part("username") RequestBody username, @Part("password") RequestBody password);

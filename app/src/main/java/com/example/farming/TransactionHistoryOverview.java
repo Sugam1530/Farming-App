@@ -9,14 +9,16 @@ public class TransactionHistoryOverview {
     private String user_type;
     private String created_at;
     private String updated_at;
+    private String txn_type;
 
     public TransactionHistoryOverview()
     {}
 
-    public TransactionHistoryOverview(String amount, String created_at, String type){
+    public TransactionHistoryOverview(String amount, String created_at, String type, String txn_type){
         this.amount = amount;
         this.created_at = created_at;
         this.type = type;
+        this.txn_type = txn_type;
     }
 
 
@@ -50,6 +52,8 @@ public class TransactionHistoryOverview {
         return updated_at;
     }
 
+    public String getTxn_type() {return  txn_type;}
+
     // Setter Methods
 
     public void setId(String id) {
@@ -79,4 +83,6 @@ public class TransactionHistoryOverview {
     public void setUpdated_at(String updated_at) {
         this.updated_at = updated_at;
     }
+
+    public void setTxn_type(String txn_type) {this.txn_type = txn_type;}
 }
