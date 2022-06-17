@@ -65,7 +65,7 @@ public class BottomSheetFragment extends BottomSheetDialogFragment {
                             cartView.totalPriceText.setText(df.format(Float.parseFloat(cartView.totalPriceText.getText().toString())-(Integer.parseInt(response.body().getResponse().getDiscount_percentage())*Float.parseFloat(cartView.totalPriceText.getText().toString())/100.0)));
                             Toast.makeText(getContext(), "Coupon Applied Successfully", Toast.LENGTH_SHORT).show();
                             dismiss();
-                        } else {
+                        } else{
                             Toast.makeText(getContext(), "No Coupon Found", Toast.LENGTH_SHORT).show();
                         }
                     }
