@@ -52,10 +52,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.wallet:
                 startActivity(new Intent(getApplicationContext(), Wallet_view.class));
                 break;
+            case R.id.myOrder:
+                startActivity(new Intent(getApplicationContext(), MyOrder.class));
+                break;
             case R.id.logout:
                 startActivity(new Intent(getApplicationContext(), signin_password.class));
                 break;
-
         }
         return true;
     }

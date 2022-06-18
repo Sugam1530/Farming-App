@@ -47,6 +47,9 @@ public interface ApiInterface {
 @GET("api/wallet/alltransactions/{num}")
     Call<ResponseArrayTransactionHistory> getTransactionHistory(@Path("num") int num);
 
+@GET("api/order/myorder/{num}")
+    Call<ResponseArrayMyOrderOverview> getMyOrder(@Path("num") int num);
+
 @GET("api/wallet/walletscan?")
     Call<WalletScanOverview> getWalletScan(@Query("amount") int amount, @Query("farmerid") int farmerid);
 
